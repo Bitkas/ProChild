@@ -22,7 +22,7 @@ public class User {
         this.kid = new HashSet<Kid>();
     }
 
-    public User(int id, String nome, String email, String grauParentesco, String password, int contacto) {
+    public User(String nome, String email, String grauParentesco, String password, int contacto) {
         this.nome = nome;
         this.email = email;
         this.grauParentesco = grauParentesco;

@@ -1,15 +1,13 @@
 package com.DAI.ProChild.User;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
-@RequestMapping(path = "/User/")
+
 public class UserController {
 
     private final UserService userService;
@@ -18,12 +16,20 @@ public class UserController {
     public UserController(UserService userService) {
         this.userService = userService;
     }
-    @GetMapping
+    @GetMapping(path = "/User/")
     public List<User> getAllUsers() {
+        System.out.print("getAll");
         return this.userService.GetAllUsers();
+
     }
-    @GetMapping(path = ":email")
-    public User getUser(@RequestParam String email) {
-        return this.userService.getUser(email);
+
+    @RequestMapping(value = "/User/{email}/", method = RequestMethod.GET)
+    public String getUser(@PathVariable String email) {
+        Optional<User> user = this.userService.getUser(email);
+        if(user.isPresent()) {
+            return user.get().getEmail();
+        } else {
+            return "User não Encontrado";
+        }
     }
 }
