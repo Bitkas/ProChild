@@ -1,22 +1,41 @@
 package com.DAI.ProChild.User;
 
+import com.DAI.ProChild.Complaint.Complaint;
 import com.DAI.ProChild.Kid.Kid;
+import com.DAI.ProChild.Message.Message;
+import net.bytebuddy.asm.Advice;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "Utilizador")
 public class User {
+    @Column
     private String nome;
     @Id
     private String email;
+    @Column(name="Kinship")
     private String grauParentesco;
+    @Column
     private String password;
+    @Column
     private int contacto;
-    private HashSet<Kid> kid;
+
+    @ManyToMany()
+    @JoinTable(name = "User_Kid",
+    joinColumns = {
+        @JoinColumn(name = "email_User")},
+    inverseJoinColumns = {
+            @JoinColumn(name = "kid_id")
+    })
+    private Set<Kid> kid;
+
+    @OneToMany(mappedBy = "user")
+    private Set<Complaint> complaints;
+    @OneToMany(mappedBy = "user")
+    private Set<Message> messages;
     
     public User() {
         this.kid = new HashSet<Kid>();
@@ -80,8 +99,12 @@ public class User {
         this.contacto = contacto;
     }
 
-    public HashSet<Kid> getKid() {
-        return kid;
+    public Set<Kid> getKid() {
+        return this.kid;
+    }
+
+    public boolean login(User user) {
+        return this.getEmail().equals(user.getEmail()) && this.getPassword().equals(user.getPassword());
     }
 
 }
