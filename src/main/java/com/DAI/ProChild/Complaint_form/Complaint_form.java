@@ -16,7 +16,7 @@ public class Complaint_form {
     private String adress;
     private int cellphone;
     private String description;
-    private int id_complanitt;   //CHAVE ESTRANGEIRA!
+    private int id_complanitt;
 
     public Complaint_form(int idcomplaint_form, String name, Date birth_date, String gender, String adress, int cellphone, String description, int id_complanitt){
         this.idcomplaint_form = idcomplaint_form;   //É preciso?
