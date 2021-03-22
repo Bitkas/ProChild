@@ -3,7 +3,6 @@ package com.DAI.ProChild.User;
 import com.DAI.ProChild.Complaint.Complaint;
 import com.DAI.ProChild.Kid.Kid;
 import com.DAI.ProChild.Message.Message;
-import net.bytebuddy.asm.Advice;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -13,15 +12,15 @@ import java.util.Set;
 @Table(name = "Utilizador")
 public class User {
     @Column
-    private String nome;
+    private String name;
     @Id
     private String email;
-    @Column(name="Kinship")
-    private String grauParentesco;
+    @Column
+    private String kinship;
     @Column
     private String password;
     @Column
-    private int contacto;
+    private int cellphone;
 
     @ManyToMany()
     @JoinTable(name = "User_Kid",
@@ -41,30 +40,30 @@ public class User {
         this.kid = new HashSet<Kid>();
     }
 
-    public User(String nome, String email, String grauParentesco, String password, int contacto) {
-        this.nome = nome;
+    public User(String nome, String email, String kinship, String password, int contacto) {
+        this.name = nome;
         this.email = email;
-        this.grauParentesco = grauParentesco;
+        this.kinship = kinship;
         this.password = password;
-        this.contacto = contacto;
+        this.cellphone = contacto;
         this.kid = new HashSet<Kid>();
     }
 
     public User(User user) {
-        this.nome = user.nome;
+        this.name = user.name;
         this.email = user.email;
-        this.grauParentesco = user.grauParentesco;
+        this.kinship = user.kinship;
         this.password = user.password;
-        this.contacto = user.contacto;
+        this.cellphone = user.cellphone;
         this.kid = user.kid;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEmail() {
@@ -75,12 +74,12 @@ public class User {
         this.email = email;
     }
 
-    public String getGrauParentesco() {
-        return grauParentesco;
+    public String getKinship() {
+        return kinship;
     }
 
-    public void setGrauParentesco(String grauParentesco) {
-        this.grauParentesco = grauParentesco;
+    public void setGrauParentesco(String kinship) {
+        this.kinship = kinship;
     }
 
     public String getPassword() {
@@ -91,12 +90,12 @@ public class User {
         this.password = password;
     }
 
-    public int getContacto() {
-        return contacto;
+    public int getCellphone() {
+        return cellphone;
     }
 
-    public void setContacto(int contacto) {
-        this.contacto = contacto;
+    public void setCellphone(int cellphone) {
+        this.cellphone = cellphone;
     }
 
     public Set<Kid> getKid() {
@@ -105,6 +104,10 @@ public class User {
 
     public boolean login(User user) {
         return this.getEmail().equals(user.getEmail()) && this.getPassword().equals(user.getPassword());
+    }
+
+    public boolean password(String password) {
+        return this.getPassword().equals((password));
     }
 
 }
