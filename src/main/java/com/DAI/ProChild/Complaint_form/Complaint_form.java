@@ -1,40 +1,49 @@
 package com.DAI.ProChild.Complaint_form;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import com.DAI.ProChild.Complaint.Complaint;
+
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
 @Table(name= "complaint_form")
 public class Complaint_form {
     @Id
-    private int idcomplaint_form;
+    @GeneratedValue
+    private int idComplaintForm;
+    @Column
     private String name;
+    @Column
     private Date birth_date;
+    @Column
     private String gender;
-    private String adress;
+    @Column
+    private String address;
+    @Column
     private int cellphone;
+    @Column
     private String description;
-    private int id_complanitt;
+    @OneToOne
+    @JoinColumn(name = "id_Complaint", referencedColumnName = "id_Complaint")
+    private Complaint complaint;
 
-    public Complaint_form(int idcomplaint_form, String name, Date birth_date, String gender, String adress, int cellphone, String description, int id_complanitt){
-        this.idcomplaint_form = idcomplaint_form;   //É preciso?
+    public Complaint_form(int idComplaintForm, String name, Date birth_date, String gender, String address, int cellphone, String description, Complaint complaint){
+        this.idComplaintForm = idComplaintForm;   //É preciso?
         this.name = name;
         this.birth_date = birth_date;
         this.gender = gender;
-        this.adress = adress;
+        this.address = address;
         this.cellphone = cellphone;
         this.description = description;
-        this.id_complanitt = id_complanitt;
+        this.complaint = complaint;
     }
 
     public int getIdcomplaint_form() {
-        return idcomplaint_form;
+        return idComplaintForm;
     }
 
     public void setIdcomplaint_form(int idcomplaint_form) {
-        this.idcomplaint_form = idcomplaint_form;
+        this.idComplaintForm = idcomplaint_form;
     }
 
     public String getName() {
@@ -62,11 +71,11 @@ public class Complaint_form {
     }
 
     public String getAdress() {
-        return adress;
+        return address;
     }
 
     public void setAdress(String adress) {
-        this.adress = adress;
+        this.address = adress;
     }
 
     public int getCellphone() {
@@ -85,11 +94,13 @@ public class Complaint_form {
         this.description = description;
     }
 
-    public int getId_complanitt() {
-        return id_complanitt;
+    public int getId_complaint() {
+        return idComplaintForm;
     }
 
-    public void setId_complanitt(int id_complanitt) {
-        this.id_complanitt = id_complanitt;
+    public void setId_complaint(Complaint complaint) {
+        this.complaint = complaint;
     }
+
+
 }
