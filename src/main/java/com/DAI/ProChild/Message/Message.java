@@ -3,9 +3,10 @@ package com.DAI.ProChild.Message;
 import com.DAI.ProChild.Kid.Kid;
 import com.DAI.ProChild.Topic.Topic;
 import com.DAI.ProChild.User.User;
-
 import javax.persistence.*;
 
+@Entity
+@Table(name = "Message")
 public class Message {
     @Id
     @SequenceGenerator(

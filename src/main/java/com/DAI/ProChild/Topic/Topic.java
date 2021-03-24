@@ -2,7 +2,6 @@ package com.DAI.ProChild.Topic;
 
 import com.DAI.ProChild.Directory.Directory;
 import com.DAI.ProChild.Message.Message;
-
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
