@@ -10,10 +10,18 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table
+@Table(name = "Kid")
 public class Kid {
     @Id
-    @GeneratedValue
+    @SequenceGenerator(
+            name = "kid_sequence",
+            sequenceName = "kid_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "kid_sequence"
+    )
     private int idKid;
     @Column
     private String name;

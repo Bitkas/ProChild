@@ -1,31 +1,42 @@
 package com.DAI.ProChild.Complaint;
 
 import com.DAI.ProChild.Complaint_Audio.Complaint_Audio;
-import com.DAI.ProChild.Complaint_form.Complaint_form;
+import com.DAI.ProChild.Complaint_form.Complaint_Form;
 import com.DAI.ProChild.Kid.Kid;
 import com.DAI.ProChild.User.User;
 
 import javax.persistence.*;
-import java.util.Optional;
 
+@Entity
+@Table(name = "Complaint")
 public class Complaint {
     @Id
-    @GeneratedValue
+    @SequenceGenerator(
+            name = "complaint_sequence",
+            sequenceName = "complaint_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "complaint_sequence"
+    )
     private int idComplaint;
-    @OneToOne
-    @JoinColumn(name = "idAudio", referencedColumnName = "idAudio")
+    @OneToMany
+    @JoinColumn(name = "idAudio")
     private Complaint_Audio audio;
-    @OneToOne
-    @JoinColumn(name = "idForm", referencedColumnName = "idForm")
-    private Complaint_form form;
+    @OneToMany
+    @JoinColumn(name = "idForm")
+    private Complaint_Form form;
     @ManyToOne
+    @JoinColumn(name = "idUser")
     private User user;
     @ManyToOne
+    @JoinColumn(name = "idKid")
     private Kid kid;
 
     public Complaint() {
-
     }
+
 
     public int getIdComplaint() {
         return idComplaint;
@@ -39,28 +50,28 @@ public class Complaint {
         return audio;
     }
 
-    public Complaint_form getForm() {
+    public void setAudio(Complaint_Audio audio) {
+        this.audio = audio;
+    }
+
+    public Complaint_Form getForm() {
         return form;
+    }
+
+    public void setForm(Complaint_Form form) {
+        this.form = form;
     }
 
     public User getUser() {
         return user;
     }
 
-    public Kid getKid() {
-        return kid;
-    }
-
-    public void setAudio(Complaint_Audio audio) {
-        this.audio = audio;
-    }
-
-    public void setForm(Complaint_form form) {
-        this.form = form;
-    }
-
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public Kid getKid() {
+        return kid;
     }
 
     public void setKid(Kid kid) {

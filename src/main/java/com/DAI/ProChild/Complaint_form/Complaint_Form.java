@@ -7,9 +7,17 @@ import java.util.Date;
 
 @Entity
 @Table(name= "complaint_form")
-public class Complaint_form {
+public class Complaint_Form {
     @Id
-    @GeneratedValue
+    @SequenceGenerator(
+            name = "form_sequence",
+            sequenceName = "form_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "form_sequence"
+    )
     private int idComplaintForm;
     @Column
     private String name;
@@ -27,7 +35,7 @@ public class Complaint_form {
     @JoinColumn(name = "id_Complaint", referencedColumnName = "id_Complaint")
     private Complaint complaint;
 
-    public Complaint_form(int idComplaintForm, String name, Date birth_date, String gender, String address, int cellphone, String description, Complaint complaint){
+    public Complaint_Form(int idComplaintForm, String name, Date birth_date, String gender, String address, int cellphone, String description, Complaint complaint){
         this.idComplaintForm = idComplaintForm;   //É preciso?
         this.name = name;
         this.birth_date = birth_date;
