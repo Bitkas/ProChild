@@ -7,14 +7,22 @@ import java.util.Date;
 
 @Entity
 @Table(name= "complaint_form")
-public class Complaint_form {
+public class Complaint_Form {
     @Id
-    @GeneratedValue
+    @SequenceGenerator(
+            name = "form_sequence",
+            sequenceName = "form_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "form_sequence"
+    )
     private int idComplaintForm;
     @Column
     private String name;
     @Column
-    private Date birth_date;
+    private Date birthDate;
     @Column
     private String gender;
     @Column
@@ -24,25 +32,31 @@ public class Complaint_form {
     @Column
     private String description;
     @OneToOne
-    @JoinColumn(name = "id_Complaint", referencedColumnName = "id_Complaint")
-    private Complaint complaint;   //CHAVE ESTRANGEIRA!
+    @JoinColumn(name = "idComplaint", referencedColumnName = "idComplaint")
+    private Complaint complaint;
 
+<<<<<<< HEAD:src/main/java/com/DAI/ProChild/Complaint_form/Complaint_form.java
     public Complaint_form(String name, Date birth_date, String gender, String address, int cellphone, String description, Complaint complaint){
+=======
+    public Complaint_Form(){
+
+    }
+    public Complaint_Form(String name, Date birthDate, String gender, String address, int cellphone, String description){
+>>>>>>> e1c8f2321b07ebefc7f3c40fe6d1be77124fefeb:src/main/java/com/DAI/ProChild/Complaint_form/Complaint_Form.java
         this.name = name;
-        this.birth_date = birth_date;
+        this.birthDate = birthDate;
         this.gender = gender;
         this.address = address;
         this.cellphone = cellphone;
         this.description = description;
-        this.complaint = complaint;
     }
 
-    public int getIdcomplaint_form() {
+    public int getIdComplaintForm() {
         return idComplaintForm;
     }
 
-    public void setIdcomplaint_form(int idcomplaint_form) {
-        this.idComplaintForm = idcomplaint_form;
+    public void setIdComplaintForm(int idComplaintForm) {
+        this.idComplaintForm = idComplaintForm;
     }
 
     public String getName() {
@@ -53,12 +67,12 @@ public class Complaint_form {
         this.name = name;
     }
 
-    public Date getBirth_date() {
-        return birth_date;
+    public Date getBirthDate() {
+        return birthDate;
     }
 
-    public void setBirth_date(Date birth_date) {
-        this.birth_date = birth_date;
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
     }
 
     public String getGender() {
@@ -69,12 +83,12 @@ public class Complaint_form {
         this.gender = gender;
     }
 
-    public String getAdress() {
+    public String getAddress() {
         return address;
     }
 
-    public void setAdress(String adress) {
-        this.address = adress;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public int getCellphone() {
@@ -93,11 +107,11 @@ public class Complaint_form {
         this.description = description;
     }
 
-    public int getId_complaint() {
-        return idComplaintForm;
+    public Complaint getComplaint() {
+        return complaint;
     }
 
-    public void setId_complaint(Complaint complaint) {
+    public void setComplaint(Complaint complaint) {
         this.complaint = complaint;
     }
 }

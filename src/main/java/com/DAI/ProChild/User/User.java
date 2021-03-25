@@ -9,7 +9,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "Utilizador")
+@Table(name = "User")
 public class User {
     @Column
     private String name;
@@ -21,31 +21,25 @@ public class User {
     private String password;
     @Column
     private int cellphone;
-
-    @ManyToMany()
+    @ManyToMany
     @JoinTable(name = "User_Kid",
     joinColumns = {
-        @JoinColumn(name = "email_User")},
+        @JoinColumn(name = "email")},
     inverseJoinColumns = {
-            @JoinColumn(name = "kid_id")
+            @JoinColumn(name = "idKid")
     })
     private Set<Kid> kid;
-
     @OneToMany(mappedBy = "user")
     private Set<Complaint> complaints;
     @OneToMany(mappedBy = "user")
     private Set<Message> messages;
-    
-    public User() {
-        this.kid = new HashSet<Kid>();
-    }
 
-    public User(String nome, String email, String kinship, String password, int contacto) {
+    public User(String nome, String email, String kinship, String password, int cellphone) {
         this.name = nome;
         this.email = email;
         this.kinship = kinship;
         this.password = password;
-        this.cellphone = contacto;
+        this.cellphone = cellphone;
         this.kid = new HashSet<Kid>();
     }
 
@@ -78,7 +72,7 @@ public class User {
         return kinship;
     }
 
-    public void setGrauParentesco(String kinship) {
+    public void setKinship(String kinship) {
         this.kinship = kinship;
     }
 
