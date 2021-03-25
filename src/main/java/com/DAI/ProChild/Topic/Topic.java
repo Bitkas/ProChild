@@ -19,7 +19,7 @@ public class Topic {
     private Set<Message> messages;
 
     public Topic() {
-        this.directory = new Directory();
+        //this.directory = new Directory();
         this.messages = new HashSet<>();
     }
 
@@ -27,5 +27,13 @@ public class Topic {
         this.title = title;
         this.directory = new Directory();
         this.messages = new HashSet<>();
+    }
+
+    public Directory getDirectory() {
+        return directory;
+    }
+
+    public void setDirectory(Directory directory) {
+        this.directory = directory;
     }
 }

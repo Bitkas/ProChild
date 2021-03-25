@@ -27,8 +27,7 @@ public class Complaint_form {
     @JoinColumn(name = "id_Complaint", referencedColumnName = "id_Complaint")
     private Complaint complaint;   //CHAVE ESTRANGEIRA!
 
-    public Complaint_form(int idComplaintForm, String name, Date birth_date, String gender, String address, int cellphone, String description, Complaint complaint){
-        this.idComplaintForm = idComplaintForm;   //É preciso?
+    public Complaint_form(String name, Date birth_date, String gender, String address, int cellphone, String description, Complaint complaint){
         this.name = name;
         this.birth_date = birth_date;
         this.gender = gender;

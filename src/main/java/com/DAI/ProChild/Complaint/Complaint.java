@@ -23,8 +23,8 @@ public class Complaint {
     @ManyToOne
     private Kid kid;
 
-    public Complaint() {
-
+    public Complaint(User user) {
+        this.user = user;
     }
 
     public int getIdComplaint() {

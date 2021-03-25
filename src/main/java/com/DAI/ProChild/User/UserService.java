@@ -23,4 +23,8 @@ public class UserService {
         Optional<User> user = this.userRepository.findById(email);
         return user;
     }
+
+    public void registerUser(User user) {
+        this.userRepository.save(user);
+    }
 }
