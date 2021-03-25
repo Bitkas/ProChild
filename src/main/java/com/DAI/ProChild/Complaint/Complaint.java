@@ -21,6 +21,7 @@ public class Complaint {
             strategy = GenerationType.SEQUENCE,
             generator = "complaint_sequence"
     )
+    @Column
     private int idComplaint;
     @OneToMany
     @JoinColumn(name = "idAudio")

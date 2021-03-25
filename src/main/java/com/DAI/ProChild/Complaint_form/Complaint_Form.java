@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name= "complaint_form")
+@Table(name= "Complaint_Form")
 public class Complaint_Form {
     @Id
     @SequenceGenerator(
