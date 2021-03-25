@@ -5,11 +5,13 @@ import com.DAI.ProChild.Complaint.RegisterComplaintRepository;
 import com.DAI.ProChild.Complaint_Audio.ComplaintAudioRepository;
 import com.DAI.ProChild.Complaint_Audio.Complaint_Audio;
 import com.DAI.ProChild.Complaint_form.ComplaintFormRepository;
-import com.DAI.ProChild.Complaint_form.Complaint_form;
+import com.DAI.ProChild.Complaint_form.Complaint_Form;
 import com.DAI.ProChild.User.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Service;
 
+@Service
 public class RegisterComplaintService {
 
     private final RegisterComplaintRepository registerComplaintRepository;
@@ -33,7 +35,7 @@ public class RegisterComplaintService {
         return HttpStatus.OK;
     }
 
-    public HttpStatus registerForm(Complaint_form complaint_form) {
+    public HttpStatus registerForm(Complaint_Form complaint_form) {
         this.complaintFormRepository.save(complaint_form);
         return HttpStatus.OK;
     }

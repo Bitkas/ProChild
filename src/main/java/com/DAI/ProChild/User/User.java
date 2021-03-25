@@ -28,7 +28,7 @@ public class User {
     inverseJoinColumns = {
             @JoinColumn(name = "idKid")
     })
-    private Set<Kid> kid;
+    private Set<Kid> kids;
     @OneToMany(mappedBy = "user")
     private Set<Complaint> complaints;
     @OneToMany(mappedBy = "user")
@@ -40,7 +40,7 @@ public class User {
         this.kinship = kinship;
         this.password = password;
         this.cellphone = cellphone;
-        this.kid = new HashSet<Kid>();
+        this.kids = new HashSet<Kid>();
     }
 
     public User(User user) {
@@ -49,7 +49,7 @@ public class User {
         this.kinship = user.kinship;
         this.password = user.password;
         this.cellphone = user.cellphone;
-        this.kid = user.kid;
+        this.kids = user.kids;
     }
 
     public String getName() {
@@ -92,8 +92,8 @@ public class User {
         this.cellphone = cellphone;
     }
 
-    public Set<Kid> getKid() {
-        return this.kid;
+    public Set<Kid> getKids() {
+        return this.kids;
     }
 
     public boolean login(User user) {

@@ -23,7 +23,7 @@ public class Directory {
     private String title;
     @Column
     private String theme;
-    @OneToMany(mappedBy = "topic")
+    @OneToMany(mappedBy = "directory")
     private Set<Topic> topics;
 
     public Directory() {

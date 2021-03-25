@@ -35,20 +35,17 @@ public class Complaint_Form {
     @JoinColumn(name = "idComplaint", referencedColumnName = "idComplaint")
     private Complaint complaint;
 
-<<<<<<< HEAD:src/main/java/com/DAI/ProChild/Complaint_form/Complaint_form.java
-    public Complaint_form(String name, Date birth_date, String gender, String address, int cellphone, String description, Complaint complaint){
-=======
     public Complaint_Form(){
 
     }
-    public Complaint_Form(String name, Date birthDate, String gender, String address, int cellphone, String description){
->>>>>>> e1c8f2321b07ebefc7f3c40fe6d1be77124fefeb:src/main/java/com/DAI/ProChild/Complaint_form/Complaint_Form.java
+    public Complaint_Form(String name, Date birthDate, String gender, String address, int cellphone, String description, Complaint complaint){
         this.name = name;
         this.birthDate = birthDate;
         this.gender = gender;
         this.address = address;
         this.cellphone = cellphone;
         this.description = description;
+        this.complaint = complaint;
     }
 
     public int getIdComplaintForm() {

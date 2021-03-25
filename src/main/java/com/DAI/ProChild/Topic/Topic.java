@@ -25,7 +25,7 @@ public class Topic {
     @ManyToOne
     @JoinColumn(name = "idDirectory")
     private Directory directory;
-    @OneToMany (mappedBy = "Message")
+    @OneToMany (mappedBy = "topic")
     private Set<Message> messages;
 
     public Topic() {

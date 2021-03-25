@@ -6,6 +6,7 @@ import com.DAI.ProChild.Kid.Kid;
 import com.DAI.ProChild.User.User;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "Complaint")
@@ -23,10 +24,10 @@ public class Complaint {
     private int idComplaint;
     @OneToMany
     @JoinColumn(name = "idAudio")
-    private Complaint_Audio audio;
+    private Set<Complaint_Audio> audio;
     @OneToMany
     @JoinColumn(name = "idForm")
-    private Complaint_Form form;
+    private Set<Complaint_Form> form;
     @ManyToOne
     @JoinColumn(name = "idUser")
     private User user;
@@ -50,19 +51,19 @@ public class Complaint {
         this.idComplaint = idComplaint;
     }
 
-    public Complaint_Audio getAudio() {
+    public Set<Complaint_Audio> getAudio() {
         return audio;
     }
 
-    public void setAudio(Complaint_Audio audio) {
+    public void setAudio(Set<Complaint_Audio> audio) {
         this.audio = audio;
     }
 
-    public Complaint_Form getForm() {
+    public Set<Complaint_Form> getForm() {
         return form;
     }
 
-    public void setForm(Complaint_Form form) {
+    public void setForm(Set<Complaint_Form> form) {
         this.form = form;
     }
 

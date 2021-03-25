@@ -2,7 +2,7 @@ package com.DAI.ProChild.RegisterComplaint;
 
 import com.DAI.ProChild.Complaint.Complaint;
 import com.DAI.ProChild.Complaint_Audio.Complaint_Audio;
-import com.DAI.ProChild.Complaint_form.Complaint_form;
+import com.DAI.ProChild.Complaint_form.Complaint_Form;
 import com.DAI.ProChild.User.User;
 import com.DAI.ProChild.User.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,7 +45,7 @@ public class RegisterComplaintController {
         Optional<User> user = this.userService.getUser(email);
         if(user.isPresent()) {
             Complaint complaint = this.registerComplaintService.registerComplaintForAudio(user.get());
-            Complaint_form complaint_form = new Complaint_form(name, bithDate, gender, address, cellphone, description, complaint);
+            Complaint_Form complaint_form = new Complaint_Form(name, bithDate, gender, address, cellphone, description, complaint);
             return this.registerComplaintService.registerForm(complaint_form);
         } else {
             return HttpStatus.CONFLICT;
