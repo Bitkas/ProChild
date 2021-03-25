@@ -1,5 +1,4 @@
 package com.DAI.ProChild.RegisterComplaint;
-
 import com.DAI.ProChild.Complaint.Complaint;
 import com.DAI.ProChild.Complaint_Audio.Complaint_Audio;
 import com.DAI.ProChild.Complaint_form.Complaint_Form;
@@ -14,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Date;
 import java.util.Optional;
-
 @RestController
 public class RegisterComplaintController {
     private final RegisterComplaintService registerComplaintService;
@@ -25,7 +23,6 @@ public class RegisterComplaintController {
         this.registerComplaintService = registerComplaintService;
         this.userService = userService;
     }
-
     @RequestMapping(value = "/Audio", method = RequestMethod.POST)
     public HttpStatus registerAudioComplaint(@RequestBody String email, @RequestBody String URLAudio) {
         Optional<User> user = this.userService.getUser(email);
@@ -39,7 +36,6 @@ public class RegisterComplaintController {
             return HttpStatus.CONFLICT;
         }
     }
-
     @RequestMapping(value = "/Form", method = RequestMethod.POST)
     public HttpStatus registerFormComplaint(@RequestBody String email, @RequestBody String name, @RequestBody Date bithDate, @RequestBody String gender, @RequestBody String address, @RequestBody int cellphone, @RequestBody String description) {
         Optional<User> user = this.userService.getUser(email);
@@ -51,5 +47,4 @@ public class RegisterComplaintController {
             return HttpStatus.CONFLICT;
         }
     }
-
 }

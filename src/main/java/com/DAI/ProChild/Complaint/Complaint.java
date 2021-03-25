@@ -1,5 +1,4 @@
 package com.DAI.ProChild.Complaint;
-
 import com.DAI.ProChild.Complaint_Audio.Complaint_Audio;
 import com.DAI.ProChild.Complaint_form.Complaint_Form;
 import com.DAI.ProChild.Kid.Kid;
@@ -7,9 +6,9 @@ import com.DAI.ProChild.User.User;
 
 import javax.persistence.*;
 import java.util.Set;
-
 @Entity
 @Table(name = "Complaint")
+
 public class Complaint {
     @Id
     @SequenceGenerator(
@@ -36,13 +35,10 @@ public class Complaint {
     @JoinColumn(name = "idKid")
     private Kid kid;
 
-
+    public Complaint() { }
     public Complaint(User user) {
         this.user = user;
     }
-    public Complaint() {
-    }
-
 
     public int getIdComplaint() {
         return idComplaint;

@@ -1,10 +1,7 @@
 package com.DAI.ProChild.Complaint_form;
-
 import com.DAI.ProChild.Complaint.Complaint;
-
 import javax.persistence.*;
 import java.util.Date;
-
 @Entity
 @Table(name= "Complaint_Form")
 public class Complaint_Form {

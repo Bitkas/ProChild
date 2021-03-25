@@ -1,5 +1,4 @@
 package com.DAI.ProChild.Directory;
-
 import com.DAI.ProChild.Topic.Topic;
 
 import javax.persistence.*;
@@ -21,21 +20,16 @@ public class Directory {
     private int idDirectory;
     @Column
     private String title;
-    @Column
-    private String theme;
     @OneToMany(mappedBy = "directory")
     private Set<Topic> topics;
 
     public Directory() {
         this.topics = new HashSet<>();
     }
-
-    public Directory(String title, String theme) {
+    public Directory(String title) {
         this.title = title;
-        this.theme = theme;
         this.topics = new HashSet<>();
     }
-
     public int getIdDirectory() {
         return idDirectory;
     }
@@ -52,21 +46,10 @@ public class Directory {
         this.title = title;
     }
 
-    public String getTheme() {
-        return theme;
-    }
-
-    public void setTheme(String theme) {
-        this.theme = theme;
-    }
-
     public Set<Topic> getTopics() {
         return topics;
     }
 
     public void setTopics(Set<Topic> topics) {
         this.topics = topics;
-    }
-
-
-}
+    }}

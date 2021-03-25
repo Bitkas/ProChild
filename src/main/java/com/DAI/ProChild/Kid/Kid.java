@@ -1,14 +1,11 @@
 package com.DAI.ProChild.Kid;
-
 import com.DAI.ProChild.Complaint.Complaint;
 import com.DAI.ProChild.Message.Message;
 import com.DAI.ProChild.User.User;
-
 import javax.persistence.*;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
-
 @Entity
 @Table(name = "Kid")
 public class Kid {

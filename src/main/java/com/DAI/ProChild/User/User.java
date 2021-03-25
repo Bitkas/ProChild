@@ -1,5 +1,4 @@
 package com.DAI.ProChild.User;
-
 import com.DAI.ProChild.Complaint.Complaint;
 import com.DAI.ProChild.Kid.Kid;
 import com.DAI.ProChild.Message.Message;
@@ -7,7 +6,6 @@ import com.DAI.ProChild.Message.Message;
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
-
 @Entity
 @Table(name = "User")
 public class User {
@@ -99,10 +97,7 @@ public class User {
     public boolean login(User user) {
         return this.getEmail().equals(user.getEmail()) && this.getPassword().equals(user.getPassword());
     }
-
     public boolean password(String password) {
         return this.getPassword().equals((password));
     }
-
-
 }

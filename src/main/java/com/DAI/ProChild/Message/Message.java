@@ -1,10 +1,8 @@
 package com.DAI.ProChild.Message;
-
 import com.DAI.ProChild.Kid.Kid;
 import com.DAI.ProChild.Topic.Topic;
 import com.DAI.ProChild.User.User;
 import javax.persistence.*;
-
 @Entity
 @Table(name = "Message")
 public class Message {
@@ -35,7 +33,6 @@ public class Message {
 
     public Message(){
     }
-
     public Message(boolean isURL, String message){
         this.isURL = isURL;
         this.message = message;

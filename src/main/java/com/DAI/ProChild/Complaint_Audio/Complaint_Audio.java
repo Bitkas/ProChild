@@ -1,10 +1,8 @@
 package com.DAI.ProChild.Complaint_Audio;
-
 import com.DAI.ProChild.Complaint.Complaint;
 
 import javax.persistence.*;
 import java.util.Set;
-
 @Entity
 @Table(name = "Complaint_Audio")
 public class Complaint_Audio {
@@ -25,19 +23,15 @@ public class Complaint_Audio {
     @JoinColumn(name = "idComplaint")
     private Complaint complaint;
 
-
     public Complaint_Audio(Complaint complaint, String URLAudio) {
         this.complaint = complaint;
         this.URLAudio = URLAudio;
     }
-
     public Complaint_Audio(){
     }
-
     public Complaint_Audio( String URLAudio){
         this.URLAudio= URLAudio;
     }
-
 
     public int getIdComplaintAudio() {
         return idComplaintAudio;
