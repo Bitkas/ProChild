@@ -30,8 +30,10 @@ public class Kid {
     @ManyToMany(mappedBy = "kids")
     private Set<User> users;
     @OneToMany
+    @JoinColumn(name = "idComplaint")
     private Set<Complaint> complaints;
     @OneToMany
+    @JoinColumn(name = "idMessage")
     private Set<Message> messages;
 
     public Kid() {
