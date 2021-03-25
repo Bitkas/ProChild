@@ -27,8 +27,7 @@ public class Topic {
     private Directory directory;
     @OneToMany (mappedBy = "topic")
     private Set<Message> messages;
-
-
+    
     public Topic() {
         //this.directory = new Directory();
         this.messages = new HashSet<>();
