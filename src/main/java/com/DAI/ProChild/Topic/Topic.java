@@ -2,6 +2,7 @@ package com.DAI.ProChild.Topic;
 import com.DAI.ProChild.Directory.Directory;
 import com.DAI.ProChild.Message.Message;
 import javax.persistence.*;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 @Entity
@@ -20,23 +21,28 @@ public class Topic {
     private int idTopic;
     @Column
     private String title;
-    @Column
-    private String theme;
     @ManyToOne
     @JoinColumn(name = "idDirectory")
     private Directory directory;
     @OneToMany (mappedBy = "topic")
     private Set<Message> messages;
-    
+    @Column
+    private String theme;
+
+    @Column
+    private Date dateCreation;
+
     public Topic() {
         //this.directory = new Directory();
         this.messages = new HashSet<>();
+        this.dateCreation = new Date();
     }
     public Topic(String title, String theme) {
         this.title = title;
-        this.theme = theme;
         this.directory = new Directory();
         this.messages = new HashSet<>();
+        this.theme = theme;
+        this.dateCreation = new Date();
     }
 
     public int getIdTopic() {
@@ -55,14 +61,6 @@ public class Topic {
         this.title = title;
     }
 
-    public String getTheme() {
-        return theme;
-    }
-
-    public void setTheme(String theme) {
-        this.theme = theme;
-    }
-
     public Directory getDirectory() {
         return directory;
     }
@@ -79,4 +77,19 @@ public class Topic {
         this.messages = messages;
     }
 
+    public String getTheme() {
+        return theme;
+    }
+
+    public void setTheme(String theme) {
+        this.theme = theme;
+    }
+
+    public Date getDateCreation() {
+        return dateCreation;
+    }
+
+    public void setDateCreation(Date dateCreation) {
+        this.dateCreation = dateCreation;
+    }
 }
