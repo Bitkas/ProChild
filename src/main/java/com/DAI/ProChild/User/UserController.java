@@ -40,6 +40,6 @@ public class UserController {
 
     @RequestMapping(value = "/test")
     public String teste() {
-        return "docker Worked!!!!!"
+        return "docker Worked!!!!!";
     }
 }
