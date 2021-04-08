@@ -1,0 +1,8 @@
+language: java
+jdk:
+  - openjdk8
+before_script:
+  - docker login -u bitkas -p 123456789
+script:
+  - ./gradlew install
+  - ./gradlew jib --image bitkas/prochild
