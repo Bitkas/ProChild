@@ -38,7 +38,7 @@ public class UserController {
         }
     }
 
-    @RequestMapping(value = "/test", method = RequestMethod.GET)
+    @RequestMapping(value = "/test/", method = RequestMethod.GET)
     public String teste() {
         return "docker Worked!!!!!";
     }
