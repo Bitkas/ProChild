@@ -37,4 +37,9 @@ public class UserController {
             return HttpStatus.OK;
         }
     }
+
+    @RequestMapping(value = "/test")
+    public String teste() {
+        return "docker Worked!!!!!"
+    }
 }
