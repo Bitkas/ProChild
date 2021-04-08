@@ -3,6 +3,7 @@ jdk:
   - openjdk8
 before_script:
   - docker login -u bitkas -p 123456789
+  - docker pull openjdk:8
 script:
   - ./gradlew install
-  - ./gradlew jib --image bitkas/prochild
+  - ./gradlew jib --image bitkas/prochilddai
