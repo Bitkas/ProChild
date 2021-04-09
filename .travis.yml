@@ -7,3 +7,5 @@ before_script:
 script:
   - ./gradlew install
   - ./gradlew jib --image bitkas/prochilddai
+after_script:
+  - docker pull bitkas/prochilddai
