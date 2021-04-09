@@ -48,4 +48,8 @@ public class UserController {
         return "Deploy to Heroku!!!!!";
     }*/
 
+    @RequestMapping(path = "/", method = RequestMethod.GET)
+    public String HomePage() {
+        return "HomePage!!!!!";
+    }
 }
