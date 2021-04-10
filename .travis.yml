@@ -14,4 +14,6 @@ deploy:
   provider: heroku
   api_key:
     secure: 9d03bee5-aa8c-458d-9f6a-143eb947bb76
+  on:
+    all_branches: true
   app: aqueous-waters-59160
