@@ -12,8 +12,7 @@ after_script:
 
 deploy:
   provider: heroku
-  api_key:
-    secure: 0aa7d7bc-63ad-4751-9c8b-ed405db81455
+  api_key: 0aa7d7bc-63ad-4751-9c8b-ed405db81455
   on:
     all_branches: true
   app: aqueous-waters-59160
