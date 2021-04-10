@@ -9,3 +9,9 @@ script:
   - ./gradlew jib --image bitkas/prochilddai
 after_script:
   - docker pull bitkas/prochilddai
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: 9d03bee5-aa8c-458d-9f6a-143eb947bb76
+  app: aqueous-waters-59160
