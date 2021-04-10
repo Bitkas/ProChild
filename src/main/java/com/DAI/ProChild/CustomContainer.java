@@ -9,8 +9,8 @@ import static sun.management.snmp.AdaptorBootstrap.DefaultValues.PORT;
 public class CustomContainer implements WebServerFactoryCustomizer<ConfigurableServletWebServerFactory> {
 
     public void customize(ConfigurableServletWebServerFactory factory) {
-        if(System.getenv(PORT) != null) {
-            factory.setPort(Integer.valueOf(System.getenv(PORT)));
+        if(System.getenv("PORT") != null) {
+            factory.setPort(Integer.valueOf(System.getenv("PORT")));
         }
     }
 }
