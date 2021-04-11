@@ -8,6 +8,7 @@ import org.springframework.boot.web.servlet.server.ConfigurableServletWebServerF
 public class CustomContainer implements WebServerFactoryCustomizer<ConfigurableServletWebServerFactory> {
 
     public void customize(ConfigurableServletWebServerFactory factory) {
+        System.out.println(System.getenv("PORT"));
         if(System.getenv("PORT") != null) {
             factory.setPort(Integer.valueOf(System.getenv("PORT")));
         }
