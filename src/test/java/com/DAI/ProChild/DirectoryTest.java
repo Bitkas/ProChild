@@ -8,7 +8,6 @@ import org.junit.jupiter.api.Test;
 
 import java.util.HashSet;
 import java.util.Set;
-
 public class DirectoryTest {
 
     Set<Topic> topicsFiltered;
@@ -24,7 +23,6 @@ public class DirectoryTest {
         this.topicsToBeFilteredAllWrong = new HashSet<>();
         this.topicsToBeFilteredAllRight = new HashSet<>();
     }
-
     @Test
     public void filterByThemeTest() {
         Topic topicThemeRight = new Topic("someRightTheme", "someRightTitle");
@@ -66,5 +64,4 @@ public class DirectoryTest {
         this.topicsToBeFilteredAllWrong.add(topicTitleWrong1);
         assertNotEquals(rightTopics, topicsToBeFilteredAllWrong);
     }
-
 }

@@ -84,6 +84,5 @@ public class Directory {
         }
         return topicsByDate;
     }*/
-
 }
 
