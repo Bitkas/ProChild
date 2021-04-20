@@ -52,4 +52,15 @@ public class UserController {
     public String HomePage() {
         return "HomePage!!!!!";
     }
+
+    @RequestMapping(value = "/RegisterUser", method = RequestMethod.PUT)
+    public void updateUser(@RequestBody String name, @RequestBody String email, @RequestBody String kinship, @RequestBody String password, @RequestBody int contacto) {
+        Optional<User> user = this.userService.getUser(email);
+        user.get().setName(name);
+        user.get().setKinship(kinship);
+        user.get().setPassword(password);
+        user.get().setCellphone(contacto);
+        this.userService.updateUser(user.get());
+    }
+
 }
