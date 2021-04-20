@@ -9,17 +9,6 @@ import java.util.Set;
 @Table(name = "Topic")
 public class Topic {
     @Id
-    @SequenceGenerator(
-            name = "topic_sequence",
-            sequenceName = "topic_sequence",
-            allocationSize = 1
-    )
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "topic_sequence"
-    )
-    private int idTopic;
-    @Column
     private String title;
     @ManyToOne
     @JoinColumn(name = "idDirectory")
@@ -28,7 +17,6 @@ public class Topic {
     private Set<Message> messages;
     @Column
     private String theme;
-
     @Column
     private Date dateCreation;
 
@@ -45,13 +33,6 @@ public class Topic {
         this.dateCreation = new Date();
     }
 
-    public int getIdTopic() {
-        return idTopic;
-    }
-
-    public void setIdTopic(int idTopic) {
-        this.idTopic = idTopic;
-    }
 
     public String getTitle() {
         return title;
