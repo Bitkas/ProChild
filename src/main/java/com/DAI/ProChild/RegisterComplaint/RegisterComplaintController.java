@@ -4,8 +4,10 @@ import com.DAI.ProChild.Complaint_Audio.Complaint_Audio;
 import com.DAI.ProChild.Complaint_form.Complaint_Form;
 import com.DAI.ProChild.User.User;
 import com.DAI.ProChild.User.UserService;
+import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -17,6 +19,7 @@ import java.util.Optional;
 public class RegisterComplaintController {
     private final RegisterComplaintService registerComplaintService;
     private final UserService userService;
+    private final Gson gson = new Gson();
 
     @Autowired
     public RegisterComplaintController(RegisterComplaintService registerComplaintService, UserService userService) {
@@ -24,27 +27,30 @@ public class RegisterComplaintController {
         this.userService = userService;
     }
     @RequestMapping(value = "/Audio", method = RequestMethod.POST)
-    public HttpStatus registerAudioComplaint(@RequestBody String email, @RequestBody String URLAudio) {
+    public ResponseEntity<String> registerAudioComplaint(@RequestBody String email, @RequestBody String URLAudio) {
         Optional<User> user = this.userService.getUser(email);
         if(user.isPresent()) {
             Complaint complaint = new Complaint(user.get());
             this.registerComplaintService.registerComplaintForAudio(user.get());
-            Complaint_Audio complaint_audio = new Complaint_Audio(complaint, URLAudio);
-            this.registerComplaintService.registerAudio(complaint_audio);
-            return HttpStatus.OK;
+            Complaint_Audio complaintAudio = this.registerComplaintService.registerAudio(new Complaint_Audio(complaint, URLAudio));
+            return ResponseEntity.ok()
+                    .body(gson.toJson(complaintAudio));
         } else {
-            return HttpStatus.CONFLICT;
+            return ResponseEntity.status(HttpStatus.CONFLICT)
+                    .body(gson.toJson("User não Encontrado!"));
         }
     }
     @RequestMapping(value = "/Form", method = RequestMethod.POST)
-    public HttpStatus registerFormComplaint(@RequestBody String email, @RequestBody String name, @RequestBody Date bithDate, @RequestBody String gender, @RequestBody String address, @RequestBody int cellphone, @RequestBody String description) {
+    public ResponseEntity<String> registerFormComplaint(@RequestBody String email, @RequestBody String name, @RequestBody Date bithDate, @RequestBody String gender, @RequestBody String address, @RequestBody int cellphone, @RequestBody String description) {
         Optional<User> user = this.userService.getUser(email);
         if(user.isPresent()) {
             Complaint complaint = this.registerComplaintService.registerComplaintForAudio(user.get());
-            Complaint_Form complaint_form = new Complaint_Form(name, bithDate, gender, address, cellphone, description, complaint);
-            return this.registerComplaintService.registerForm(complaint_form);
+            Complaint_Form complaintForm = this.registerComplaintService.registerForm(new Complaint_Form(name, bithDate, gender, address, cellphone, description, complaint));
+            return ResponseEntity.ok()
+                    .body(gson.toJson(complaintForm));
         } else {
-            return HttpStatus.CONFLICT;
+            return ResponseEntity.status(HttpStatus.CONFLICT)
+                    .body(gson.toJson("User não encontrado!"));
         }
     }
 }
