@@ -34,4 +34,8 @@ public class TopicService {
         this.topicRepository.save(topic);
         //return topic;
     }
+
+    public void deleteTopic(Topic topic){
+        this.topicRepository.delete(topic);
+    }
 }

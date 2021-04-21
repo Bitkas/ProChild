@@ -41,6 +41,27 @@ public class TopicController {
         }
     }
 
+    @RequestMapping (path = "/DeleteTopic", method = RequestMethod.DELETE)
+    public HttpStatus deleteTopic(@RequestBody String title, @RequestBody String theme, @RequestBody String email){
+        Optional<User> user = this.userService.getUser(email);
+        if(user.isPresent()){
+            Optional<Topic> topics = this.topicService.getTopic(title);
+            if (topics.isPresent()){
+
+                this.topicService.deleteTopic(topic);
+                return HttpStatus.OK;
+            }else{
+                return HttpStatus.CONFLICT;
+            }
+        }else{
+            return HttpStatus.NOT_FOUND;
+        }
+    }
+
+
+
+
+
 }
 
 
