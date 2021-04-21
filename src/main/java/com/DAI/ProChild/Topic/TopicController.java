@@ -2,8 +2,10 @@ package com.DAI.ProChild.Topic;
 
 import com.DAI.ProChild.User.User;
 import com.DAI.ProChild.User.UserService;
+import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
@@ -12,6 +14,7 @@ import java.util.*;
 public class TopicController {
     private final TopicService topicService;
     private final UserService userService;
+    private final Gson gson = new Gson();
 
     @Autowired
     public TopicController(TopicService topicService, UserService userService) {
@@ -19,42 +22,48 @@ public class TopicController {
         this.userService = userService;
     }
     @GetMapping(path = "/Topic/")
-    public List<Topic> getAllTopics() {
-        System.out.print("getAll");
-        return this.topicService.GetAllTopics();
+    public ResponseEntity<String> getAllUsers() {
+        List<User> users = this.userService.GetAllUsers();
+        return ResponseEntity.ok()
+                .body(gson.toJson(users));
     }
 
-    @RequestMapping(path = "/RegisterTopic", method = RequestMethod.POST)
-    public HttpStatus registerTopic(@RequestBody String title, @RequestBody String theme, @RequestBody String email){
+    @RequestMapping(value = "/RegisterTopic", method = RequestMethod.POST)
+    public ResponseEntity<String> registerTopic(@RequestBody String title, @RequestBody String theme, @RequestBody String email){
         Optional<User> user = this.userService.getUser(email);
         if(user.isPresent()){
             Optional<Topic> topics = this.topicService.getTopic(title);
             if(topics.isPresent() ){
-                return HttpStatus.CONFLICT;
+                return ResponseEntity.ok()
+                        .body(gson.toJson( "Topico já existe!"));
                 }else{
-                Topic topic = new Topic(title, theme);
-                this.topicService.registerTopic(topic);
-                return HttpStatus.OK;
+                Topic newTopic = new Topic(title, theme);
+                this.topicService.registerTopic(newTopic);
+                return ResponseEntity.ok()
+                        .body(gson.toJson(newTopic));
                 }
          }else{
-            return HttpStatus.NOT_FOUND;
+            return ResponseEntity.ok()
+                    .body(gson.toJson("User não Encontrado"));
         }
     }
 
-    @RequestMapping (path = "/DeleteTopic", method = RequestMethod.DELETE)
-    public HttpStatus deleteTopic(@RequestBody String title, @RequestBody String theme, @RequestBody String email){
+    @RequestMapping (value = "/DeleteTopic", method = RequestMethod.DELETE)
+    public ResponseEntity<String> deleteTopic(@RequestBody String title, @RequestBody String theme, @RequestBody String email){
         Optional<User> user = this.userService.getUser(email);
         if(user.isPresent()){
             Optional<Topic> topics = this.topicService.getTopic(title);
             if (topics.isPresent()){
-
-                this.topicService.deleteTopic(topic);
-                return HttpStatus.OK;
+                this.topicService.deleteTopic(topics.get());
+                return ResponseEntity.ok()
+                        .body(gson.toJson(topics));
             }else{
-                return HttpStatus.CONFLICT;
+                return ResponseEntity.ok()
+                        .body(gson.toJson("Tópico não Encontrado"));
             }
         }else{
-            return HttpStatus.NOT_FOUND;
+            return ResponseEntity.ok()
+                    .body(gson.toJson("User não Encontrado"));
         }
     }
 
