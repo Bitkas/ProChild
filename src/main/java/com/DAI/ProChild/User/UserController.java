@@ -1,55 +1,50 @@
 package com.DAI.ProChild.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import com.google.gson.Gson;
 
 import java.util.List;
 import java.util.Optional;
 @RestController
 public class UserController {
     private final UserService userService;
+    private final Gson gson = new Gson();
+
     @Autowired
     public UserController(UserService userService) {
         this.userService = userService;
     }
     @GetMapping(path = "/User/")
-    public List<User> getAllUsers() {
-        System.out.print("getAll");
-        return this.userService.GetAllUsers();
+    public ResponseEntity<String> getAllUsers() {
+        List<User> users = this.userService.GetAllUsers();
+        return ResponseEntity.ok()
+                .body(gson.toJson(users));
     }
     @RequestMapping(value = "/User/{email}/", method = RequestMethod.GET)
-    public String getUser(@PathVariable String email) {
+    public ResponseEntity<String> getUser(@PathVariable String email) {
         Optional<User> user = this.userService.getUser(email);
         if(user.isPresent()) {
-            return user.get().getEmail();
+            return ResponseEntity.ok()
+            .body(gson.toJson(user.get().getEmail()));
         } else {
-            return "User não Encontrado";
+            return ResponseEntity.ok()
+                    .body(gson.toJson("User não Encontrado"));
         }
     }
     @RequestMapping(value = "/RegisterUser", method = RequestMethod.POST)
-    public HttpStatus registerUser(@RequestBody String name, @RequestBody String email, @RequestBody String kinship, @RequestBody String password, @RequestBody int contacto) {
+    public ResponseEntity<String> registerUser(@RequestBody String name, @RequestBody String email, @RequestBody String kinship, @RequestBody String password, @RequestBody int contacto) {
         Optional<User> user = this.userService.getUser(email);
         if (user.isPresent()) {
-            return HttpStatus.CONFLICT;
+            return ResponseEntity.status(HttpStatus.CONFLICT)
+                    .body(gson.toJson("Utilizador já existe!"));
         } else {
             User newUser = new User(name, email, kinship, password, contacto);
             this.userService.registerUser(newUser);
-            return HttpStatus.OK;
+            return ResponseEntity.ok()
+                    .body(gson.toJson(newUser));
         }
-    }
-
-    @RequestMapping(path = "/test/", method = RequestMethod.GET)
-    public String teste() {
-        return "docker Finally Worked!!!!!";
-    }
-
-    /*@RequestMapping(path = "/heroku/", method = RequestMethod.GET)
-    public String testeHeroku() {
-        return "Deploy to Heroku!!!!!";
-    }*/
-
-    @RequestMapping(path = "/", method = RequestMethod.GET)
-    public String HomePage() {
-        return "HomePage!!!!!";
     }
 }

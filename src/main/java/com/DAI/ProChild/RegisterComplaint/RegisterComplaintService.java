@@ -30,13 +30,11 @@ public class RegisterComplaintService {
         return complaint;
     }
 
-    public HttpStatus registerAudio(Complaint_Audio complaint_audio) {
-        this.complaintAudioRepository.save(complaint_audio);
-        return HttpStatus.OK;
+    public Complaint_Audio registerAudio(Complaint_Audio complaint_audio) {
+        return this.complaintAudioRepository.save(complaint_audio);
     }
 
-    public HttpStatus registerForm(Complaint_Form complaint_form) {
-        this.complaintFormRepository.save(complaint_form);
-        return HttpStatus.OK;
+    public Complaint_Form registerForm(Complaint_Form complaint_form) {
+        return this.complaintFormRepository.save(complaint_form);
     }
 }

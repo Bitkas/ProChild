@@ -27,4 +27,8 @@ public class UserService {
     public void registerUser(User user) {
         this.userRepository.save(user);
     }
+
+    public void updateUser(User user) {
+        this.userRepository.save(user);
+    }
 }
