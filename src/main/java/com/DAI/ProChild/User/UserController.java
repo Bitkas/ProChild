@@ -34,7 +34,7 @@ public class UserController {
                     .body(gson.toJson("User não Encontrado"));
         }
     }
-    @RequestMapping(value = "/RegisterUser", method = RequestMethod.POST)
+    @RequestMapping(path = "/RegisterUser/", method = RequestMethod.POST)
     public ResponseEntity<String> registerUser(@RequestBody String name, @RequestBody String email, @RequestBody String kinship, @RequestBody String password, @RequestBody int contacto) {
         Optional<User> user = this.userService.getUser(email);
         if (user.isPresent()) {

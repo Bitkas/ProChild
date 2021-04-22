@@ -1,4 +1,4 @@
-package com.DAI.ProChild.Message;
+/*package com.DAI.ProChild.Message;
 
 import com.DAI.ProChild.Topic.Topic;
 import com.DAI.ProChild.Topic.TopicService;
@@ -36,7 +36,7 @@ public class MessageController {
     public ResponseEntity<String> registerMessage(@RequestBody boolean isURL, @RequestBody String message, @RequestBody String email, @RequestBody String title){
         Optional<User> user = this.userService.getUser(email);
         if(user.isPresent()){
-            Optional<Message> messages = this.messageService.getMessage(idMessage);
+            //Optional<Message> messages = this.messageService.getMessage(idMessage);
             Optional<Topic> topics = this.topicService.getTopic(title);
             if(topics.isPresent()){
                 Message newMessage = new Message(isURL, message);
@@ -74,3 +74,4 @@ public class MessageController {
     }
 
 }
+*/
