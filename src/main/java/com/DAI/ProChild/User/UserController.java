@@ -23,7 +23,7 @@ public class UserController {
         return ResponseEntity.ok()
                 .body(gson.toJson(users));
     }
-    @RequestMapping(value = "/User/{email}/", method = RequestMethod.GET)
+    @RequestMapping(path = "/User/{email}/", method = RequestMethod.GET)
     public ResponseEntity<String> getUser(@PathVariable String email) {
         Optional<User> user = this.userService.getUser(email);
         if(user.isPresent()) {

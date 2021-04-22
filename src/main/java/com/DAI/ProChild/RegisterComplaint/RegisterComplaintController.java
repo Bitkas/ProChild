@@ -26,7 +26,7 @@ public class RegisterComplaintController {
         this.registerComplaintService = registerComplaintService;
         this.userService = userService;
     }
-    @RequestMapping(value = "/Audio", method = RequestMethod.POST)
+    @RequestMapping(path = "/Audio", method = RequestMethod.POST)
     public ResponseEntity<String> registerAudioComplaint(@RequestBody String email, @RequestBody String URLAudio) {
         Optional<User> user = this.userService.getUser(email);
         if(user.isPresent()) {
@@ -40,7 +40,7 @@ public class RegisterComplaintController {
                     .body(gson.toJson("User não Encontrado!"));
         }
     }
-    @RequestMapping(value = "/Form", method = RequestMethod.POST)
+    @RequestMapping(path = "/Form", method = RequestMethod.POST)
     public ResponseEntity<String> registerFormComplaint(@RequestBody String email, @RequestBody String name, @RequestBody Date bithDate, @RequestBody String gender, @RequestBody String address, @RequestBody int cellphone, @RequestBody String description) {
         Optional<User> user = this.userService.getUser(email);
         if(user.isPresent()) {
