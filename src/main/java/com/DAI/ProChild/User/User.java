@@ -32,6 +32,12 @@ public class User {
     @OneToMany(mappedBy = "user")
     private Set<Message> messages;
 
+    public User() {
+        this.kids = new HashSet<>();
+        this.complaints = new HashSet<>();
+        this.messages = new HashSet<>();
+    }
+
     public User(String nome, String email, String kinship, String password, int cellphone) {
         this.name = nome;
         this.email = email;
