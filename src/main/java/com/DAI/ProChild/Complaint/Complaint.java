@@ -79,4 +79,5 @@ public class Complaint {
     public void setKid(Kid kid) {
         this.kid = kid;
     }
+
 }
