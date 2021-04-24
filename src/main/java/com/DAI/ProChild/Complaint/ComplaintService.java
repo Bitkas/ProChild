@@ -13,7 +13,7 @@ public class ComplaintService {
     private final RegisterComplaintRepository registerComplaintRepository;
 
     @Autowired
-    public ComplaintService(RegisterComplaintRepository registerComplaintRepository, ComplaintService complaintService){
+    public ComplaintService(RegisterComplaintRepository registerComplaintRepository){
         this.registerComplaintRepository = registerComplaintRepository;
     }
 

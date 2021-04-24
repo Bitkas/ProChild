@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.Optional;
 
 @Service
-@RequestMapping(path = "/login/", method = RequestMethod.POST)
 public class MyUserDetailsService implements UserDetailsService {
     @Autowired
     private UserRepository userRepository;
