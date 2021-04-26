@@ -1,0 +1,144 @@
+/* Font */
+
+body {
+    font-family: 'Nunito', sans-serif;
+}
+
+
+/* */
+
+* {
+    overflow-x: hidden;
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+.screen {
+    width: 414px;
+    height: 736px;
+    position: absolute;
+    overflow: hidden;
+    z-index: -1;
+    background-color: white;
+}
+.backBtn {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 3%;
+    left: 3%;
+    z-index: 5;
+}
+
+.addText {
+    width: 288px;
+    color: rgba(132, 132, 132, 1);
+    position: absolute;
+    top: 190px;
+    left: 63px;
+    font-weight: bold;
+    font-size: 25px;
+    opacity: 1;
+    text-align: center;
+}
+.circuloAddKid {
+    width: 108px;
+    height: 108px;
+    background: rgba(67, 164, 235, 0.10000000149011612);
+    opacity: 1;
+    position: relative;
+    top: 36px;
+    left: 153px;
+    border-radius: 50%;
+}
+
+.kidImg {
+    position: absolute;
+    width: 77px;
+    height: 78px;
+    top: 12px;
+    left: 16px;
+}
+
+/* form */
+
+#kidNomeInput {
+    width: 341px;
+    height: 55px;
+    background: rgba(148, 206, 240, 0.18000000715255737);
+    opacity: 1;
+    position: absolute;
+    top: 328px;
+    left: 47px;
+    color:#85C1FA; !important
+    border: 1px solid rgba(92, 174, 249, 1);
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    overflow: hidden;
+}
+
+::placeholder {
+    width: 54px;
+    color: #85C1FA; !important
+    font-weight: bold;
+    font-size: 20px;
+    opacity: 1;
+}
+
+#mesInput {
+    width: 216px;
+    height: 55px;
+    background: rgba(148, 206, 240, 0.18000000715255737);
+    opacity: 1;
+    position: absolute;
+    top: 427px;
+    left: 47px;
+    border: 1px solid rgba(92, 174, 249, 1);
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    overflow: hidden;
+}
+
+#anoInput {
+    width: 120px;
+    height: 55px;
+    background: rgba(148, 206, 240, 0.18000000715255737);
+    opacity: 1;
+    position: absolute;
+    top: 427px;
+    left: 267px;
+    border: 1px solid rgba(92, 174, 249, 1);
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    overflow: hidden;
+}
+/*  */
+
+.adicionarBtn {
+    height: 7%;
+    width: 60%;
+    border-radius: 32px;
+    position: absolute;
+    background-color: #44A5EB;
+    color: #ffffff;
+    font-size: 25px;
+    font-weight: bold;
+    border: none;
+    top: 623px;
+    left: 20%;
+    box-shadow: 4px 4px 2px rgb(50 50 50 / 50%);
+}
+
+/*  */
+
+.sunPerfil {
+    position: absolute;
+    top: 549px;
+    left: -5px;
+}

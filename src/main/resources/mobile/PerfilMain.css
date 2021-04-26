@@ -1,0 +1,258 @@
+/* Font */
+
+body {
+    font-family: 'Nunito', sans-serif;
+}
+
+
+/* */
+
+* {
+    overflow-x: hidden;
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+.screen {
+    width: 414px;
+    height: 736px;
+    position: absolute;
+    overflow: hidden;
+    z-index: -1;
+    background-color: white;
+}
+/* Navbar */
+.navbar{
+    z-index:3;
+    overflow: hidden;
+    width:100%!important;
+    max-width:none!important;
+    height:100%;
+    max-height:70px;
+    text-align:center;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.owlPerfil {
+    position: absolute;
+    width: 59px;
+    height: 57px;
+    left: 81%;
+}
+
+.title {
+    width: 221px;
+    color: #44A5EB;
+    position: absolute;
+    font-weight: bold;
+    font-size: 35px;
+    opacity: 1;
+    text-align: left;
+    left: 5%;
+}
+
+/*user*/
+
+.userCircle {
+    width: 129px;
+    height: 129px;
+    background: rgba(249,249,249,1);
+    opacity: 1;
+    position: relative;
+    top: 105px;
+    left: 19px;
+    border-radius: 50%;
+}
+
+.userImg {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 11px;
+    left: 15px;
+
+}
+
+.cloudBackPerfil {
+    position: absolute;
+    top: 435px;
+    left: 1px;
+}
+
+.parentName {
+    position: absolute;
+    top: 118px;
+    left: 162px;
+    font-weight: bold;
+    font-size: 20px;
+    color: #727272;
+}
+
+.grauParentesco {
+    position: absolute;
+    top: 144px;
+    left: 163px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #44A5EB;
+}
+
+.editarPerfilBut {
+    height: 33px;
+    width: 150px;
+    border-radius: 32px;
+    position: absolute;
+    background-color: #44A5EB;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    top: 178px;
+    left: 163px;
+    box-shadow: 4px 4px 2px rgb(50 50 50 / 50%);
+}
+
+.horizontalLine1{
+    position: absolute;
+    top: 246px;
+    width: 100%;
+    text-align:left;
+    margin-left:0
+}
+
+/* Mid-Section */
+
+.filhosTag {
+    width: 221px;
+    color: #44A5EB;
+    position: absolute;
+    font-weight: bold;
+    font-size: 27px;
+    opacity: 1;
+    text-align: left;
+    left: 5%;
+    top: 34%;
+}
+
+.addCircle {
+    width: 70px;
+    height: 65.48px;
+    background: rgba(249,249,249,1);
+    opacity: 1;
+    position: relative;
+    top: 165px;
+    left: 12px;
+    border-radius: 50%;
+}
+
+.addIcon {
+    width: 45px;
+    height: 45px;
+    filter: invert(84%) sepia(10%) saturate(0%) hue-rotate(299deg) brightness(96%) contrast(95%);
+}
+
+.addIconButton {
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    top: 9px;
+    left: 13px;
+}
+/*  */
+.horizontalLine2{
+    position: absolute;
+    top: 375px;
+    width: 100%;
+    text-align:left;
+    margin-left:0
+}
+
+.sairPerfilBut {
+    height: 33px;
+    width: 150px;
+    position: absolute;
+    background-color: #ffffff;
+    color: #44A5EB;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    top: 385px;
+    left: 5px;
+}
+
+/* Menubar */
+
+#menubar {
+    background-color: transparent;
+    box-shadow: none;
+}
+.menubarMain {
+    width: 278px;
+    height: 52px;
+    background: #F9F9F9;
+    opacity: 1;
+    position: absolute;
+    left: 21px;
+    border-radius: 32px;
+}
+
+.menubarDenuncia {
+    width: 52px;
+    height: 52px;
+    background: #F9F9F9;
+    opacity: 1;
+    position: absolute;
+    left: 334px;
+    border-radius: 32px;
+}
+
+.homeIcon {
+    width: 50px;
+    height: 50px;
+}
+
+.homeIconButton {
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    left: 30px;
+}
+
+.puzzleIcon {
+    width: 50px;
+    height: 50px;
+}
+
+.puzzleIconButton {
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    left: 114px;
+}
+
+.personIcon {
+    width: 50px;
+    height: 50px;
+}
+
+.personIconButton {
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    left: 198px;
+}
+
+.denunciaIcon {
+    width: 35px;
+    height: 35px;
+ 
+}
+
+.denunciaIconButton {
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    top: 7px;
+    left: 9px;
+}

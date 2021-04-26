@@ -1,0 +1,252 @@
+/* Font */
+
+body {
+    font-family: 'Nunito', sans-serif;
+}
+
+
+/* */
+
+* {
+    overflow-x: hidden;
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+.screen {
+    width: 414px;
+    height: 736px;
+    position: absolute;
+    overflow: hidden;
+    z-index: -1;
+    background-color: white;
+}
+
+.backBtn {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 3%;
+    left: 3%;
+    z-index: 5;
+}
+
+/*  */
+
+.title {
+    width: 221px;
+    color: #44A5EB;
+    position: absolute;
+    font-weight: bold;
+    font-size: 35px;
+    opacity: 1;
+    text-align: left;
+    left: 40%;
+    top: 10px;
+}
+
+/*user*/
+
+.userCircle {
+    width: 129px;
+    height: 129px;
+    background: rgba(249,249,249,1);
+    opacity: 1;
+    position: relative;
+    top: 105px;
+    left: 35%;
+    border-radius: 50%;
+    border: none;
+}
+
+.userImg {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 11px;
+    left: 15px;
+
+}
+
+/* Form */
+
+.emailTag {
+    width: 176px;
+    color: rgba(68,165,235,1);
+    position: absolute;
+    top: 276px;
+    left: 119px;
+    text-align: center;
+    font-weight: Regular;
+    font-size: 24px;
+    opacity: 1;
+}
+
+.emailDiv {
+    width: 375px;
+    height: 49px;
+    background: rgba(249,249,249,0.8999999761581421);
+    opacity: 1;
+    position: absolute;
+    top: 314px;
+    left: 23px;
+    border: 1px solid rgba(235,235,235,1);
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    overflow: hidden;
+}
+
+.emailOutput {
+    width: 321px;
+    color: rgba(179,179,179,1);
+    position: absolute;
+    top: 9px;
+    left: 28px;
+    font-weight: Regular;
+    font-size: 20px;
+    opacity: 1;
+    text-align: left;
+}
+
+.nomeTag {
+    width: 176px;
+    color: rgba(68,165,235,1);
+    position: absolute;
+    top: 372px;
+    left: 119px;
+    text-align: center;
+    font-weight: Regular;
+    font-size: 24px;
+    opacity: 1;
+}
+
+.nomeDiv {
+    width: 375px;
+    height: 49px;
+    background: rgba(249,249,249,0.8999999761581421);
+    opacity: 1;
+    position: absolute;
+    top: 409px;
+    left: 23px;
+    border: 1px solid rgba(235,235,235,1);
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    overflow: hidden;
+}
+
+.nomeOutput {
+    width: 321px;
+    color: rgba(179,179,179,1);
+    position: absolute;
+    top: 9px;
+    left: 28px;
+    font-weight: Regular;
+    font-size: 20px;
+    opacity: 1;
+    text-align: left;
+}
+
+.contactoTag {
+    width: 176px;
+    color: rgba(68,165,235,1);
+    position: absolute;
+    top: 461px;
+    left: 119px;
+    text-align: center;
+    font-weight: Regular;
+    font-size: 24px;
+    opacity: 1;
+}
+
+.contactoDiv {
+    width: 375px;
+    height: 49px;
+    background: rgba(249,249,249,0.8999999761581421);
+    opacity: 1;
+    position: absolute;
+    top: 502px;
+    left: 23px;
+    border: 1px solid rgba(235,235,235,1);
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    overflow: hidden;
+}
+
+.contactoOutput {
+    width: 321px;
+    color: rgba(179,179,179,1);
+    position: absolute;
+    top: 9px;
+    left: 28px;
+    font-weight: Regular;
+    font-size: 20px;
+    opacity: 1;
+    text-align: left;
+}
+.cargoTag {
+    width: 176px;
+    color: rgba(68,165,235,1);
+    position: absolute;
+    top: 553px;
+    left: 119px;     
+    text-align: center;
+    font-weight: Regular;
+    font-size: 24px;
+    opacity: 1;
+}
+
+.cargoDiv {
+    width: 375px;
+    height: 49px;
+    background: rgba(249,249,249,0.8999999761581421);
+    opacity: 1;
+    position: absolute;
+    top: 596px;
+    left: 23px;
+    border: 1px solid rgba(235,235,235,1);
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    overflow: hidden;
+}
+
+.cargoOutput {
+    width: 321px;
+    color: rgba(179,179,179,1);
+    position: absolute;
+    top: 9px;
+    left: 28px;
+    font-weight: Regular;
+    font-size: 20px;
+    opacity: 1;
+    text-align: left;
+}
+
+/* button */
+
+#menubar {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.buttonConfirmar {
+    height: 7%;
+    width: 60%;
+    border-radius: 32px;
+    position: absolute;
+    background-color: #44A5EB;
+    color: #ffffff;
+    font-size: 25px;
+    font-weight: bold;
+    border: none;
+    top: 85%;
+    left: 20%;
+    box-shadow: 4px 4px 2px rgb(50 50 50 / 50%);
+}
