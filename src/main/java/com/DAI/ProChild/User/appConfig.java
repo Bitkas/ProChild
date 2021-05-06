@@ -23,10 +23,15 @@ public class appConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.authorizeRequests()
                 .antMatchers("/")
-                .hasAnyRole()
+                //.hasAnyRole()
+                .permitAll()
                 .anyRequest()
                 .authenticated().and()
-                .formLogin();
+                .formLogin()
+                    .loginPage("/Login.html")
+                    .defaultSuccessUrl("/static/DenunciaMenu.html")
+                    .failureUrl("/login?error=true")
+                .permitAll();
     }
 
     @Override
