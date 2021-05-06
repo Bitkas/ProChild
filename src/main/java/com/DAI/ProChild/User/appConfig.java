@@ -1,6 +1,7 @@
 package com.DAI.ProChild.User;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -12,11 +13,11 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @Configuration
 @EnableWebSecurity
 @EnableWebMvc
-@ComponentScan
+@ComponentScan(basePackageClasses = CustomAuthenticationProvider.class)
 public class appConfig extends WebSecurityConfigurerAdapter {
 
-    @Autowired
-    private CustomAuthenticationProvider authenticationProvider;
+    /*@Autowired
+    private CustomAuthenticationProvider authenticationProvider;*/
 
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
@@ -30,6 +31,11 @@ public class appConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(AuthenticationManagerBuilder builder) throws Exception {
-        builder.authenticationProvider(this.authenticationProvider);
+        builder.authenticationProvider(this.getAuthenticationProvider());
+    }
+
+    @Bean
+    public CustomAuthenticationProvider getAuthenticationProvider() {
+        return new CustomAuthenticationProvider();
     }
 }

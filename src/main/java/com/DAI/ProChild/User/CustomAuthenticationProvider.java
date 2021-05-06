@@ -1,6 +1,8 @@
 package com.DAI.ProChild.User;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -14,13 +16,15 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class CustomAuthenticationProvider implements AuthenticationProvider {
 
+    @Autowired
     private MyUserDetailsService myUserDetailsService;
 
-    @Autowired
-    public CustomAuthenticationProvider(MyUserDetailsService myUserDetailsService) {
-        this.myUserDetailsService = myUserDetailsService;
+
+    public CustomAuthenticationProvider() {
+        //this.myUserDetailsService = myUserDetailsService;
     }
 
     @Override
