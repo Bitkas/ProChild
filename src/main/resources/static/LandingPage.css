@@ -1,0 +1,93 @@
+/* Font */
+
+body {
+    font-family: 'Nunito', sans-serif;
+}
+
+
+/* Body */
+
+* {
+    overflow-x: hidden;
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+.screen {
+    width: 414px;
+    height: 736px;
+    position: absolute;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.backImg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    opacity: 0.75;
+    /* Add the blur effect */
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    /* Full height */
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#logo {
+    display: block;
+    left: 16%;
+    top: 7%;
+    opacity: 1;
+    background: center;
+    position: relative;
+}
+
+#text {
+    color: white;
+    position: relative;
+    text-align: center;
+    top: 5%;
+    font-weight: Bolder;
+    font-family: 'Nunito', sans-serif;
+    font-size: 35px;
+    opacity: 1;
+    z-index: 1;
+}
+
+#entrarBtn {
+    position: absolute;
+    width: 70px;
+    height: 30px;
+    top: 2%;
+    right: 4%;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: white;
+    background-color: transparent;
+    border: none;
+}
+
+.nextBtn {
+    height: 7%;
+    width: 60%;
+    border-radius: 32px;
+    position: absolute;
+    background-color: #ffffff;
+    color: #44A5EB;
+    font-size: 25px;
+    font-weight: bold;
+    border: none;
+    top: 78%;
+    left: 20%;
+    box-shadow: 4px 4px 2px rgb(50 50 50 / 50%);
+}
+
+.nextBtn:active {
+    background-color: #dadada;
+}

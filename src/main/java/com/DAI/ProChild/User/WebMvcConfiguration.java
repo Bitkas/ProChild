@@ -1,0 +1,40 @@
+/*package com.DAI.ProChild.User;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.core.Ordered;
+import org.springframework.web.servlet.ViewResolver;
+import org.springframework.web.servlet.config.annotation.*;
+import org.springframework.web.servlet.resource.PathResourceResolver;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
+import org.springframework.web.servlet.view.JstlView;
+
+@EnableWebMvc
+@Configuration
+public class WebMvcConfiguration implements WebMvcConfigurer {
+
+    @Override
+    public void addViewControllers(ViewControllerRegistry registry) {
+        registry.addViewController("/login").setViewName("Login");
+        registry.setOrder(Ordered.HIGHEST_PRECEDENCE);
+    }
+
+    @Bean
+    public ViewResolver viewResolver() {
+        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
+        viewResolver.setViewClass(JstlView.class);
+        viewResolver.setSuffix(".html");
+
+        return viewResolver;
+    }
+
+
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/resources/**/
+                /*.addResourceLocations("/", "[charset=Windows-31J]https://localhost:8080/resources/","https://localhost:8080/resources/", "/resources/static")
+                .setCachePeriod(3600)
+                .resourceChain(true)
+                .addResolver(new PathResourceResolver());
+    }
+}*/

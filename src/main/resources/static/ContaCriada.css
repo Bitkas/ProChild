@@ -1,0 +1,50 @@
+/* Font */
+
+body {
+    font-family: 'Nunito', sans-serif;
+}
+
+.screen {
+    width: 414px;
+    height: 736px;
+    position: absolute;
+    overflow: hidden;
+    z-index: -1;
+    background-color: white;
+}
+
+.verificationBadge {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top:168px;
+    left:107px;
+
+}
+
+.contaCriadaText {
+    position: absolute;
+    top:418px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 35px;
+    font-weight: bold;
+    color: #5BA7E2;
+    text-align: center;
+}
+
+.entrarContaBtnVb {
+    height: 7%;
+    width: 60%;
+    border-radius: 32px;
+    position: absolute;
+    background-color: #44A5EB;
+    color: #ffffff;
+    font-size: 25px;
+    font-weight: bold;
+    border: none;
+    top: 85%;
+    left: 20%;
+    box-shadow: 4px 4px 2px rgb(50 50 50 / 50%);
+
+}

@@ -1,0 +1,103 @@
+/* Font */
+
+body {
+    font-family: 'Nunito', sans-serif;
+}
+
+
+/* Body */
+
+* {
+    overflow-x: hidden;
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+.screen {
+    width: 414px;
+    height: 736px;
+    position: absolute;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.backImg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#text {
+    color: white;
+    position: relative;
+    text-align: center;
+    top: 2%;
+    font-weight: Bolder;
+    font-family: 'Nunito', sans-serif;
+    font-size: 35px;
+    opacity: 1;
+    z-index: 1;
+}
+
+#text2 {
+    color: white;
+    position: relative;
+    text-align: center;
+    top: 30%;
+    font-weight: 700;
+    font-family: 'Nunito', sans-serif;
+    font-size: 25px;
+    opacity: 1;
+    z-index: 1;
+}
+
+.backBtn {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 3%;
+    left: 3%;
+    z-index: 5;
+}
+
+.audioBtn {
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    top: 45%;
+    left: 34.5%;
+    background: white;
+    border-radius: 90px;
+    border: none;
+}
+
+.audioBtn:Active {
+    background: #dadada;
+}
+
+.enviarBtn {
+    position: absolute;
+    width: 273px;
+    height: 60px;
+    left: 17%;
+    bottom: 25%;
+    color: white;
+    background: #44A5EB;
+    border: none;
+    box-shadow: 6px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    /* text */
+    font-weight: 700;
+    font-family: 'Nunito', sans-serif;
+    font-size: 25px;
+}
+
+.enviarBtn:active {
+    background: #3791d1;
+}

@@ -47,4 +47,9 @@ public class UserController {
                     .body(gson.toJson(newUser));
         }
     }
+
+    @GetMapping(path = "/")
+    public String get() {
+        return "Hello World";
+    }
 }

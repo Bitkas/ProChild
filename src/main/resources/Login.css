@@ -1,0 +1,136 @@
+/* Font */
+
+body {
+    font-family: 'Nunito', sans-serif;
+}
+
+
+/* */
+
+* {
+    overflow-x: hidden;
+    /* padding: 0px !important; */
+    margin: 0px !important;
+}
+
+.screen {
+    width: 414px;
+    height: 736px;
+    position: absolute;
+    overflow: hidden;
+    z-index: -1;
+    background-color: white;
+}
+
+.backBtn {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 3%;
+    left: 3%;
+    z-index: 5;
+}
+
+.LoginText {
+    width: 141px;
+    color: rgba(132, 132, 132, 1);
+    position: absolute;
+    top: 155px;
+    left: 138px;
+    font-weight: bold;
+    font-size: 25px;
+    opacity: 1;
+    text-align: center;
+}
+
+.circuloLock {
+    width: 108px;
+    height: 108px;
+    background: rgba(67, 164, 235, 0.10000000149011612);
+    opacity: 1;
+    position: relative;
+    top: 36px;
+    left: 153px;
+    border-radius: 50%;
+}
+
+.Lock {
+    position: absolute;
+    width: 96px;
+    height: 96px;
+    top: 10px;
+    left: 6px;
+}
+
+#emailInputEntrar {
+    width: 319px;
+    height: 55px;
+    background: rgba(148, 206, 240, 0.18000000715255737);
+    opacity: 1;
+    position: absolute;
+    top: 255px;
+    left: 48px;
+    border: 1px solid rgba(92, 174, 249, 1);
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    overflow: hidden;
+    padding: 25px;
+}
+
+#passInputEntrar {
+    width: 319px;
+    height: 55px;
+    background: rgba(148, 206, 240, 0.18000000715255737);
+    opacity: 1;
+    position: absolute;
+    top: 352px;
+    left: 48px;
+    border: 1px solid rgba(92, 174, 249, 1);
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    overflow: hidden;
+    padding: 25px;
+}
+
+#viewText {
+    position: absolute;
+    top: 370px;
+    left: 315px;
+    color: #85C1FA;
+    font-size: 20px;
+}
+
+::placeholder {
+    width: 54px;
+    color: #85C1FA !important;
+    font-weight: bold;
+    font-size: 20px;
+    opacity: 1;
+}
+
+.entrarContaBtn {
+    height: 7%;
+    width: 60%;
+    border-radius: 32px;
+    position: absolute;
+    background-color: #44A5EB;
+    color: #ffffff;
+    font-size: 25px;
+    font-weight: bold;
+    border: none;
+    top: 496px;
+    left: 20%;
+    box-shadow: 4px 4px 2px rgb(50 50 50 / 50%);
+}
+
+#NewPass {
+    position: absolute;
+    top: 584px;
+    left: 75px;
+    color: #84C7F6;
+    font-size: 18px;
+}

@@ -1,0 +1,175 @@
+/* Font */
+
+body {
+    font-family: 'Nunito', sans-serif;
+}
+
+
+/* */
+
+* {
+    overflow-x: hidden;
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+.screen {
+    width: 414px;
+    height: 736px;
+    position: absolute;
+    overflow: hidden;
+    z-index: -1;
+    background-color: white;
+}
+
+.backBtn {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 3%;
+    left: 3%;
+    z-index: 5;
+}
+
+/*  */
+
+.title {
+    width: 220px;
+    color: #44A5EB;
+    position: absolute;
+    font-weight: bold;
+    font-size: 35px;
+    opacity: 1;
+    text-align: center;
+    top: 10px;
+    left: 97px;
+}
+
+/*  */
+
+.sunPerfil {
+    position: absolute;
+    top: -16px;
+    left: 237px;
+}
+
+/* Criar Denuncia */
+
+#formNomeInput {
+    width: 341px;
+    height: 55px;
+    background: rgba(148, 206, 240, 0.18000000715255737);
+    opacity: 1;
+    position: absolute;
+    top: 125px;
+    left: 47px;
+    color:#85C1FA; !important
+    border: 1px solid rgba(92, 174, 249, 1);
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    overflow: hidden;
+    padding-left: 15px;
+}
+
+#formMoradaInput {
+    width: 341px;
+    height: 55px;
+    background: rgba(148, 206, 240, 0.18000000715255737);
+    opacity: 1;
+    position: absolute;
+    top: 205px;
+    left: 47px;
+    color:#85C1FA; !important
+    border: 1px solid rgba(92, 174, 249, 1);
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    overflow: hidden;
+}
+
+#formIdadeInput {
+    width: 341px;
+    height: 55px;
+    background: rgba(148, 206, 240, 0.18000000715255737);
+    opacity: 1;
+    position: absolute;
+    top: 282px;
+    left: 47px;
+    color:#85C1FA; !important
+    border: 1px solid rgba(92, 174, 249, 1);
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    overflow: hidden;
+}
+
+#formGenInput {
+    width: 341px;
+    height: 55px;
+    background: rgba(148, 206, 240, 0.18000000715255737);
+    opacity: 1;
+    position: absolute;
+    top: 366px;
+    left: 47px;
+    color:#85C1FA; !important
+    border: 1px solid rgba(92, 174, 249, 1);
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    overflow: hidden;
+}
+
+#formDenunciaInput {
+    width: 341px;
+    height: 163px;
+    background: rgba(148, 206, 240, 0.18000000715255737);
+    opacity: 1;
+    position: absolute;
+    top: 455px;
+    left: 47px;
+    color:#85C1FA; !important
+    border: 1px solid rgba(92, 174, 249, 1);
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    overflow: hidden;
+    margin: 50px;
+}
+
+.criarDenuBtn {
+    height: 7%;
+    width: 60%;
+    border-radius: 32px;
+    position: absolute;
+    background-color: #44A5EB;
+    color: #ffffff;
+    font-size: 25px;
+    font-weight: bold;
+    border: none;
+    top: 89%;
+    left: 20%;
+    box-shadow: 4px 4px 2px rgb(50 50 50 / 50%);
+}
+
+::placeholder {
+    width: 54px;
+    font-weight: bold;
+    font-size: 17px;
+    padding: 10px;
+    opacity: 1;
+}
+
+input[type=""] {
+    width: 54px;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 30px;
+    opacity: 1;
+    font-size:24px;
+}
