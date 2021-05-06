@@ -1,5 +1,4 @@
 package com.DAI.ProChild.Topic;
-
 import com.DAI.ProChild.User.User;
 import com.DAI.ProChild.User.UserService;
 import com.google.gson.Gson;
@@ -7,15 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.*;
-
 @RestController
 public class TopicController {
     private final TopicService topicService;
     private final UserService userService;
     private final Gson gson = new Gson();
-
     @Autowired
     public TopicController(TopicService topicService, UserService userService) {
         this.topicService = topicService;
@@ -27,7 +23,6 @@ public class TopicController {
         return ResponseEntity.ok()
                 .body(gson.toJson(users));
     }
-
     @RequestMapping(value = "/RegisterTopic", method = RequestMethod.POST)
     public ResponseEntity<String> registerTopic(@RequestBody String title, @RequestBody String theme, @RequestBody String email){
         Optional<User> user = this.userService.getUser(email);
@@ -47,7 +42,6 @@ public class TopicController {
                     .body(gson.toJson("User não Encontrado"));
         }
     }
-
     @RequestMapping (value = "/DeleteTopic", method = RequestMethod.DELETE)
     public ResponseEntity<String> deleteTopic(@RequestBody String title, @RequestBody String theme, @RequestBody String email){
         Optional<User> user = this.userService.getUser(email);
@@ -66,11 +60,6 @@ public class TopicController {
                     .body(gson.toJson("User não Encontrado"));
         }
     }
-
-
-
-
-
 }
 
 

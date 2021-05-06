@@ -64,5 +64,4 @@ public class MessageController {
                     .body(gson.toJson("User não é o Admin!"));
         }
     }
-
 }

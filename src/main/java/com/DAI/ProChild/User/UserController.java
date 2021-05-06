@@ -33,8 +33,7 @@ public class UserController {
         } else {
             return ResponseEntity.ok()
                     .body(gson.toJson("User não Encontrado"));
-        }
-    }
+        }}
     @RequestMapping(path = "/RegisterUser/", method = RequestMethod.POST)
     public ResponseEntity<String> registerUser(@RequestBody String name, @RequestBody String email, @RequestBody String kinship, @RequestBody String password, @RequestBody int contacto) {
         Optional<User> user = this.userService.getUser(email);

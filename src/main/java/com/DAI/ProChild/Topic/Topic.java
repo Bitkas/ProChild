@@ -19,7 +19,6 @@ public class Topic {
     private String theme;
     @Column
     private Date dateCreation;
-
     public Topic() {
         //this.directory = new Directory();
         this.messages = new HashSet<>();
@@ -32,8 +31,6 @@ public class Topic {
         this.theme = theme;
         this.dateCreation = new Date();
     }
-
-
     public String getTitle() {
         return title;
     }

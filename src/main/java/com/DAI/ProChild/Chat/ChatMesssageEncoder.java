@@ -19,11 +19,9 @@ public class ChatMesssageEncoder implements Encoder.Text<ChatMessage> {
 
     @Override
     public void init(EndpointConfig endpointConfig) {
-
     }
 
     @Override
     public void destroy() {
-
     }
 }

@@ -1,5 +1,4 @@
 package com.DAI.ProChild.Chat;
-
 import com.DAI.ProChild.ChatMessage;
 
 import javax.websocket.server.ServerEndpoint;
@@ -14,14 +13,11 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArraySet;
-
 @ServerEndpoint(value = "/chat/{email}")
 public class ChatEndPoint {
-
     private Session session;
     private static final Set<ChatEndPoint> chatEndpoints = new CopyOnWriteArraySet<>();
     private static HashMap<String, String> users = new HashMap<>();
-
     @OnOpen
     public void onOpen(Session session, @PathParam("email") String email) throws IOException, EncodeException {
         this.session = session;
@@ -73,5 +69,4 @@ public class ChatEndPoint {
             }
         });
     }
-
 }

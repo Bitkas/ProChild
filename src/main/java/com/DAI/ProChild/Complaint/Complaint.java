@@ -8,7 +8,6 @@ import javax.persistence.*;
 import java.util.Set;
 @Entity
 @Table(name = "Complaint")
-
 public class Complaint {
     @Id
     @SequenceGenerator(
@@ -39,7 +38,6 @@ public class Complaint {
     public Complaint(User user) {
         this.user = user;
     }
-
     public int getIdComplaint() {
         return idComplaint;
     }
@@ -64,9 +62,7 @@ public class Complaint {
         this.form = form;
     }
 
-    public User getUser() {
-        return user;
-    }
+    public User getUser() { return user; }
 
     public void setUser(User user) {
         this.user = user;
@@ -79,5 +75,4 @@ public class Complaint {
     public void setKid(Kid kid) {
         this.kid = kid;
     }
-
 }

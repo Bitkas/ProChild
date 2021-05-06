@@ -24,15 +24,12 @@ public class TopicService {
 
 
     public Optional<Topic> getTopic(String title) {
-
         Optional<Topic> topic = this.topicRepository.findById(title);
         return topic;
     }
 
-
     public void registerTopic(Topic topic){
         this.topicRepository.save(topic);
-        //return topic;
     }
 
     public void deleteTopic(Topic topic){

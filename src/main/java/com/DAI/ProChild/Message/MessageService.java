@@ -27,9 +27,7 @@ public class MessageService {
     }
 
 
-    public void registerMessage(Message message){
-        this.messageRepository.save(message);
-    }
+    public void registerMessage(Message message){ this.messageRepository.save(message); }
 
     public void deleteMessage(Message message){
         this.messageRepository.delete(message);
