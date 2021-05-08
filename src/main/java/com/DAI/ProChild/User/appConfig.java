@@ -30,8 +30,8 @@ public class appConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest()
                 .authenticated().and()
                 .formLogin()
-                    .loginPage("/login")
-                    .defaultSuccessUrl("/static/DenunciaMenu.html")
+                    //.loginPage("/login")
+                    .defaultSuccessUrl("/DenunciaMenu.html")
                     .failureUrl("/login?error=true")
                 .permitAll();
     }
