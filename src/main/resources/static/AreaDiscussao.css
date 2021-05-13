@@ -1,0 +1,56 @@
+/* Font */
+
+body {
+    font-family: 'Nunito', sans-serif;
+}
+
+
+/* */
+
+* {
+    overflow-x: hidden;
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+.screen {
+    width: 414px;
+    height: 736px;
+    position: absolute;
+    overflow: hidden;
+    z-index: -1;
+    background-color: white;
+}
+
+/* Navbar */
+.navbar{
+    z-index:3;
+    overflow: hidden;
+    width:100%!important;
+    max-width:none!important;
+    height:100%;
+    max-height:70px;
+    text-align:center;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.parrotComunidade {
+    position: absolute;
+    width: 59px;
+    height: 57px;
+    left: 81%;
+}
+
+.title {
+    width: 221px;
+    color: #44A5EB;
+    position: absolute;
+    font-weight: bold;
+    font-size: 35px;
+    opacity: 1;
+    text-align: left;
+    left: 5%;
+}
+
+/* Comments Section */

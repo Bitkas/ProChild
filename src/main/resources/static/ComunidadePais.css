@@ -126,10 +126,10 @@ div.scrollmenu {
     color: #ffffff;
     font-size: 20px;
     font-weight: bold;
+    text-align: right;
     border: none;
     box-shadow: 4px 4px 2px rgb(50 50 50 / 50%);
 }
-
 
 /* Menubar */
 
