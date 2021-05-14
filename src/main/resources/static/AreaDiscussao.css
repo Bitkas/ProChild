@@ -52,5 +52,75 @@ body {
     text-align: left;
     left: 5%;
 }
+/* Mid Section */
+
+.midSection {
+    position: absolute;
+    top:80px;
+    width: 414px;
+    height: 736px;
+}
+
+.pubTitle {
+    width: 100%;
+    height: 100%;
+}
+
+.pubText {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 150px;
+}
 
 /* Comments Section */
+
+.commentSection {
+    position: relative;
+    top: 492px;
+    height: 700px;
+}
+
+/* Menubar */
+
+#menubar {
+    background-color: white;
+    box-shadow: none;
+}
+
+#commentInput {
+    width: 319px;
+    height: 55px;
+    background: rgba(148, 206, 240, 0.18000000715255737);
+    opacity: 1;
+    position: absolute;
+    top: 7px;
+    left: 20px;
+    border: 1px solid rgba(92, 174, 249, 1);
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    overflow: hidden;
+    padding: 25px;
+}
+
+::placeholder {
+    width: 54px;
+    color: #85C1FA;
+    font-weight: bold !important;
+    font-size: 20px;
+    opacity: 1;
+}
+
+.enviarBtn {
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    left: 350px;
+}
+
+.enviarIcon {
+    width: 45px;
+    height: 45px;
+}
