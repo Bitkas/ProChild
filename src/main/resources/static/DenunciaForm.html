@@ -12,27 +12,33 @@
     <link href="./DenunciaForm.css" rel="stylesheet" />
     <title>Formulário</title>
 </head>
+
 <body>
     <div class="screen">
         <!-- Navbar -->
-        <a href="Main.html">
-            <img id="backBtn" class="backBtn" src="imagens/back.png">
-        </a>
+        <img onclick="goBack()" id="backBtn" class="backBtn" src="imagens/back.png">
         <img class="sunPerfil" src=".\imagens\sun2.png">
         <span id="title" class="title">Formulário</span>
         <!-- Form -->
         <form class="denunciaForm">
-            <input id="formNomeInput" type="text" class="inputCriarDenuncia form-control" placeholder="   Nome" required></input>
-            <input id="formMoradaInput" type="text" class="inputCriarDenuncia form-control" placeholder="   Morada" required></input>
-            <input id="formIdadeInput" type="number" class="inputCriarDenuncia form-control" placeholder="   Idade" required></input>
+            <input id="formNomeInput" type="text" class="inputCriarDenuncia form-control" placeholder="Nome" required></input>
+            <input id="formMoradaInput" type="text" class="inputCriarDenuncia form-control" placeholder="Morada" required></input>
+            <input id="formIdadeInput" type="number" class="inputCriarDenuncia form-control" placeholder="Idade" required></input>
             <select id="formGenInput" class="form-select" aria-label="Default select example">
                 <option selected disabled>Género</option>
                 <option value="1">Masculino</option>
                 <option value="2">Femenino</option>
                 <option value="3">Outro</option>
-                </select>
-            <textarea id="formDenunciaInput" type="text" class="inputCriarDenuncia form-control" placeholder="    Escreva aqui o que pretende denunciar..."></textarea>
+            </select>
+            <textarea id="formDenunciaInput" type="text" class="inputCriarDenuncia form-control" placeholder="Escreva aqui o que pretende denunciar..."></textarea>
         </form>
         <button id="criarDenunciaBtn" class="criarDenuBtn">Adicionar</button>
+
+        <script>
+            function goBack() {
+                window.history.back();
+            }
+        </script>
 </body>
-</html> 
+
+</html>
