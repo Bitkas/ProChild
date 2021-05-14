@@ -17,7 +17,8 @@ public class UserController {
     public UserController(UserService userService) {
         this.userService = userService;
     }
-    @CrossOrigin(origins = "http://localhost:8080")
+
+
     @GetMapping(path = "/User/")
     public ResponseEntity<String> getAllUsers() {
         List<User> users = this.userService.GetAllUsers();

@@ -1,6 +1,6 @@
 package com.DAI.ProChild.Chat;
 
-import com.DAI.ProChild.ChatMessage;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.websocket.server.ServerEndpoint;
 import javax.websocket.server.PathParam;
@@ -21,6 +21,8 @@ public class ChatEndPoint {
     private Session session;
     private static final Set<ChatEndPoint> chatEndpoints = new CopyOnWriteArraySet<>();
     private static HashMap<String, String> users = new HashMap<>();
+    @Autowired
+    private ChatMessageService chatMessageService;
 
     @OnOpen
     public void onOpen(Session session, @PathParam("email") String email) throws IOException, EncodeException {
@@ -37,6 +39,7 @@ public class ChatEndPoint {
     @OnMessage
     public void onMessage(Session session, ChatMessage chatMessage) throws IOException, EncodeException {
         chatMessage.setFrom(users.get(session.getId()));
+        this.chatMessageService.saveChatMessage(chatMessage);
         broadcast(chatMessage);
     }
 
