@@ -33,20 +33,26 @@ public class MessageController {
                 .body(gson.toJson(users));
     }
     @RequestMapping(value = "/RegisterMessage", method = RequestMethod.POST)
-    public HttpStatus registerMessage(@RequestBody boolean isURL, @RequestBody String message, @RequestBody String email, @RequestBody String title){
+    public ResponseEntity<String> registerMessage(@RequestBody boolean isURL, @RequestBody String message, @RequestBody String email, @RequestBody String title){
+        Long start = System.currentTimeMillis();
         Optional<User> user = this.userService.getUser(email);
         if(user.isPresent()) {
             Optional<Topic> topics = this.topicService.getTopic(title);
             if (topics.isPresent()) {
                 Message newMessage = new Message(isURL, message);
                 this.messageService.registerMessage(newMessage);
-                return HttpStatus.OK;
+                Long end = System.currentTimeMillis();
+                Long time = end - start;
+                String Time = gson.toJson(time);
+                return ResponseEntity.ok()
+                        .body(Time);
 
             } else {
-                return HttpStatus.NOT_FOUND;
+                return ResponseEntity.badRequest()
+                        .body("");
             }
         }else{
-            return HttpStatus.NOT_FOUND;
+            return ResponseEntity.badRequest().body("");
 
         }
     }

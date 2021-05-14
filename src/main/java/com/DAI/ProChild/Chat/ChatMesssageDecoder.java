@@ -1,7 +1,5 @@
 package com.DAI.ProChild.Chat;
 
-import com.DAI.ProChild.ChatMessage;
-
 import javax.websocket.DecodeException;
 import javax.websocket.Decoder;
 import javax.websocket.EndpointConfig;
