@@ -9,7 +9,6 @@ body {
 
 * {
     overflow-x: hidden;
-    padding: 0px !important;
     margin: 0px !important;
 }
 
@@ -22,15 +21,17 @@ body {
     background-color: white;
 }
 
+
 /* Navbar */
-.navbar{
-    z-index:3;
+
+.navbar {
+    z-index: 3;
     overflow: hidden;
-    width:100%!important;
-    max-width:none!important;
-    height:100%;
-    max-height:70px;
-    text-align:center;
+    width: 100%!important;
+    max-width: none!important;
+    height: 100%;
+    max-height: 70px;
+    text-align: center;
     background: #FFFFFF;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
 }
@@ -58,6 +59,8 @@ body {
     top: 435px;
     left: 1px;
 }
+
+
 /* Mid Section */
 
 div.scrollmenu {
@@ -67,14 +70,13 @@ div.scrollmenu {
     width: 800px;
     height: 550px;
     overflow: auto;
-  }
-  
-  div.scrollmenu a {
+}
+
+div.scrollmenu a {
     display: flex;
     overflow: auto;
     flex: 1;
-  }
-
+}
 
 .card {
     left: 56px;
@@ -103,7 +105,7 @@ div.scrollmenu {
     top: 4px;
     left: 3px;
     width: 305px;
-    height: 63px; 
+    height: 63px;
     font-weight: bold;
 }
 
@@ -114,6 +116,7 @@ div.scrollmenu {
     height: 90px;
     left: 3px;
 }
+
 #btn-card1 {
     position: relative;
     top: 142px;
@@ -126,10 +129,13 @@ div.scrollmenu {
     color: #ffffff;
     font-size: 20px;
     font-weight: bold;
-    text-align: right;
+    text-align: center;
     border: none;
+    padding-left: 6px;
+    padding-top: 3px;
     box-shadow: 4px 4px 2px rgb(50 50 50 / 50%);
 }
+
 
 /* Menubar */
 
@@ -137,6 +143,7 @@ div.scrollmenu {
     background-color: transparent;
     box-shadow: none;
 }
+
 .menubarMain {
     width: 278px;
     height: 52px;
@@ -196,7 +203,6 @@ div.scrollmenu {
 .denunciaIcon {
     width: 35px;
     height: 35px;
- 
 }
 
 .denunciaIconButton {
@@ -204,5 +210,5 @@ div.scrollmenu {
     background-color: transparent;
     border: none;
     top: 7px;
-    left: 9px;
+    left: 0px;
 }

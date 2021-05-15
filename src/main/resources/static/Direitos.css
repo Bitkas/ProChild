@@ -9,8 +9,6 @@ body {
 
 * {
     overflow-x: hidden;
-    padding: 0px !important;
-    margin: 0px !important;
 }
 
 .screen {
@@ -52,4 +50,36 @@ body {
     top: 3%;
     left: 3%;
     z-index: 5;
+}
+
+.scroll {
+    position: absolute;
+    background-color: transparent;
+    top: 100px;
+    width: 414px;
+    height: 500px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align: center;
+    -webkit-scrollbar: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+#video1 {
+    position: absolute;
+    top: 20px;
+    left: 7px;
+}
+
+#video2 {
+    position: absolute;
+    top: 265px;
+    left: 7px;
+}
+
+#video3 {
+    position: absolute;
+    top: 510px;
+    left: 7px;
 }

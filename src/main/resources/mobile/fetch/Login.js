@@ -35,9 +35,8 @@ function myLogin() {
             console.log(response.url); //=> String
             throw Error(response.statusText);
         } else {
-            console.log("nice");
             alert("Autenticação feita com sucesso!");
-            window.location.href = "../EscolherArea.html";
+            window.location.href = "../static/EscolherArea.html";
         }
     }).then(function(result) {
         console.log(result);
