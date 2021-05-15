@@ -50,8 +50,5 @@ public class UserController {
         }
     }
 
-    @GetMapping(path = "/")
-    public String get() {
-        return "Hello World";
-    }
+    
 }
