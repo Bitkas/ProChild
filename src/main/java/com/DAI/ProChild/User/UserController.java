@@ -37,18 +37,17 @@ public class UserController {
         }
     }
     @RequestMapping(path = "/RegisterUser/", method = RequestMethod.POST)
-    public ResponseEntity<String> registerUser(@RequestBody String name, @RequestBody String email, @RequestBody String kinship, @RequestBody String password, @RequestBody int contacto) {
-        Optional<User> user = this.userService.getUser(email);
-        if (user.isPresent()) {
+    public ResponseEntity<String> registerUser(@RequestBody User user) {
+        Optional<User> user1 = this.userService.getUser(user.getEmail());
+        if (user1.isPresent()) {
             return ResponseEntity.status(HttpStatus.CONFLICT)
                     .body(gson.toJson("Utilizador já existe!"));
         } else {
-            User newUser = new User(name, email, kinship, password, contacto);
-            this.userService.registerUser(newUser);
+            this.userService.registerUser(user);
             return ResponseEntity.ok()
-                    .body(gson.toJson(newUser));
+                    .body(gson.toJson(user));
         }
     }
 
-    
+
 }
