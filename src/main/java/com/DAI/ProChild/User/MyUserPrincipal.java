@@ -16,7 +16,7 @@ public class MyUserPrincipal implements UserDetails {
     public Collection<? extends GrantedAuthority> getAuthorities() {
         final Set<GrantedAuthority> grantedAuthoritySet = new HashSet<GrantedAuthority>();
         Authorities authorities = new Authorities();
-        grantedAuthoritySet.add(authorities.);
+        grantedAuthoritySet.add(authorities);
         return grantedAuthoritySet;
     }
 
