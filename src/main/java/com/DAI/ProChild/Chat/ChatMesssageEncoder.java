@@ -1,6 +1,5 @@
 package com.DAI.ProChild.Chat;
 
-import com.DAI.ProChild.ChatMessage;
 import com.google.gson.Gson;
 
 import javax.websocket.Encoder;

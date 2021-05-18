@@ -1,6 +1,7 @@
 package com.DAI.ProChild.User;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -31,4 +32,6 @@ public class UserService {
     public void updateUser(User user) {
         this.userRepository.save(user);
     }
+
+
 }

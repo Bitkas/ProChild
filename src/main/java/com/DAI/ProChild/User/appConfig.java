@@ -12,7 +12,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @Configuration
 @EnableWebSecurity
-@EnableWebMvc
+//@EnableWebMvc
 @ComponentScan(basePackageClasses = CustomAuthenticationProvider.class)
 public class appConfig extends WebSecurityConfigurerAdapter {
 
@@ -22,14 +22,14 @@ public class appConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.authorizeRequests()
-                .antMatchers("/")
+                .antMatchers("/", "/complaint", "/RegisterUser/")
                 //.hasAnyRole()
                 .permitAll()
                 .anyRequest()
                 .authenticated().and()
                 .formLogin()
-                    .loginPage("/Login.html")
-                    .defaultSuccessUrl("/static/DenunciaMenu.html")
+                    //.loginPage("/login")
+                    .defaultSuccessUrl("/EscolherArea.html")
                     .failureUrl("/login?error=true")
                 .permitAll();
     }

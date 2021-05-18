@@ -17,7 +17,8 @@ public class UserController {
     public UserController(UserService userService) {
         this.userService = userService;
     }
-    @CrossOrigin(origins = "http://localhost:8080")
+
+
     @GetMapping(path = "/User/")
     public ResponseEntity<String> getAllUsers() {
         List<User> users = this.userService.GetAllUsers();
@@ -35,21 +36,17 @@ public class UserController {
                     .body(gson.toJson("User não Encontrado"));
         }}
     @RequestMapping(path = "/RegisterUser/", method = RequestMethod.POST)
-    public ResponseEntity<String> registerUser(@RequestBody String name, @RequestBody String email, @RequestBody String kinship, @RequestBody String password, @RequestBody int contacto) {
-        Optional<User> user = this.userService.getUser(email);
-        if (user.isPresent()) {
+    public ResponseEntity<String> registerUser(@RequestBody User user) {
+        Optional<User> user1 = this.userService.getUser(user.getEmail());
+        if (user1.isPresent()) {
             return ResponseEntity.status(HttpStatus.CONFLICT)
                     .body(gson.toJson("Utilizador já existe!"));
         } else {
-            User newUser = new User(name, email, kinship, password, contacto);
-            this.userService.registerUser(newUser);
+            this.userService.registerUser(user);
             return ResponseEntity.ok()
-                    .body(gson.toJson(newUser));
+                    .body(gson.toJson(user));
         }
     }
 
-    @GetMapping(path = "/")
-    public String get() {
-        return "Hello World";
-    }
+
 }

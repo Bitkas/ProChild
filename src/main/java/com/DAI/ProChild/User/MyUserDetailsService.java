@@ -10,7 +10,7 @@ import java.util.Optional;
 
 @Service
 public class MyUserDetailsService implements UserDetailsService {
-    @Autowired
+    //@Autowired
     private UserRepository userRepository;
 
     @Override
