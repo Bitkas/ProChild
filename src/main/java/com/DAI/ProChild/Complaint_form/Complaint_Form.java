@@ -35,14 +35,14 @@ public class Complaint_Form {
     public Complaint_Form(){
 
     }
-    public Complaint_Form(String name, Date birthDate, String gender, String address, int cellphone, String description, Complaint complaint){
+    public Complaint_Form(String name, Date birthDate, String gender, String address, int cellphone, String description){
         this.name = name;
         this.birthDate = birthDate;
         this.gender = gender;
         this.address = address;
         this.cellphone = cellphone;
         this.description = description;
-        this.complaint = complaint;
+
     }
 
     public int getIdComplaintForm() {

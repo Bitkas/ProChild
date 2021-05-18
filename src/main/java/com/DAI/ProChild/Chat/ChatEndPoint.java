@@ -25,7 +25,6 @@ public class ChatEndPoint {
     @Autowired
     private ChatMessageService chatMessageService;
     @OnOpen
-
     public void onOpen(Session session, @PathParam("email") String email) throws IOException, EncodeException {
         this.session = session;
         chatEndpoints.add(this);

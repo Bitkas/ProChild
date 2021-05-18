@@ -8,10 +8,13 @@ import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.context.WebApplicationContext;
 
 import java.util.Date;
 import java.util.Optional;
@@ -41,16 +44,15 @@ public class RegisterComplaintController {
         }
     }
     @RequestMapping(path = "/Form", method = RequestMethod.POST)
-    public ResponseEntity<String> registerFormComplaint(@RequestBody String email, @RequestBody String name, @RequestBody Date bithDate, @RequestBody String gender, @RequestBody String address, @RequestBody int cellphone, @RequestBody String description) {
-        Optional<User> user = this.userService.getUser(email);
-        if(user.isPresent()) {
-            Complaint complaint = this.registerComplaintService.registerComplaintForAudio(user.get());
-            Complaint_Form complaintForm = this.registerComplaintService.registerForm(new Complaint_Form(name, bithDate, gender, address, cellphone, description, complaint));
-            return ResponseEntity.ok()
-                    .body(gson.toJson(complaintForm));
-        } else {
-            return ResponseEntity.status(HttpStatus.CONFLICT)
-                    .body(gson.toJson("User não encontrado!"));
+    public ResponseEntity<String> registerFormComplaint(@RequestBody Complaint_Form complaint_form) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        Optional<User> user = this.userService.getUser((String) authentication.getPrincipal());
+        Complaint complaint = this.registerComplaintService.registerComplaintForAudio(user.get());
+        complaint_form.setComplaint(complaint);
+        Complaint_Form complaintForm = this.registerComplaintService.registerForm(complaint_form);
+        return ResponseEntity.ok()
+                .body(gson.toJson(complaintForm));
+
         }
     }
-}
+
