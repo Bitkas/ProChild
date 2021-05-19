@@ -26,7 +26,7 @@ window.onload = function() {
         //chamada fetch para envio dos dados para o servior via POST
         if (data.password == document.getElementById("confPassInput").value) {
             fetch('http://aqueous-waters-59160.herokuapp.com/RegisterUser/', {
-                headers: { 'Content-Type': 'application/json' },
+                headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
                 method: 'POST',
                 body: JSON.stringify(data)
             }).then(function(response) {
