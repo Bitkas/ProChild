@@ -37,6 +37,7 @@ window.onload = function() {
                     console.log(response.url); //=> String
                     throw Error(response.statusText);
                 } else {
+                alert("Conta Criada!");
                     createacc();
                     async function createacc() {
                         alert("Conta criada com sucesso!");
