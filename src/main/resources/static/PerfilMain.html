@@ -24,20 +24,26 @@
         <div class="userCircle">
             <img class="userImg" src="./imagens/PerfilMain.utilizador.png">
         </div>
-        <span class="parentName">Roberto Fernado</span>
-        <span class="grauParentesco">Pai</span>
-        <button class="editarPerfilBut">Editar Perfil</button>
+        <span id="parentName" class="parentName">Nome</span>
+        <span id="grauParentesco" class="grauParentesco">Grau</span>
+        <a href="PerfilUpdate.html">
+            <button class="editarPerfilBut">Editar Perfil</button>
+        </a>
         <img class="cloudBackPerfil" src="./imagens/cloud 2.png">
         <hr class="horizontalLine1">
         <!--Mid-Section-->
         <span class="filhosTag">Crianças</span>
-        <div class="addCircle">
-            <button class="addIconButton">
-                <img class="addIcon" src="./imagens/PerfilMain.adicionar.svg">
-            </button>
-        </div>
+        <a href="CriarCriança.html">
+            <div class="addCircle">
+                <button class="addIconButton">
+                    <img class="addIcon" src="./imagens/PerfilMain.adicionar.svg">
+                </button>
+            </div>
+        </a>
         <hr class="horizontalLine2">
-        <button class="sairPerfilBut">Sair da Conta</button>
+        <a href="LandingPage.html">
+            <button class="sairPerfilBut">Sair da Conta</button>
+        </a>
         <!--Menubar-->
         <div id="menubar" class="navbar fixed-bottom">
             <div class="menubarMain">
@@ -67,6 +73,9 @@
         </div>
 
     </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="../mobile/fetch/PerfilMain.js" type="text/javascript"></script>
 </body>
 
 </html>

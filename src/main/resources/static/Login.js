@@ -24,7 +24,7 @@ function myLogin() {
     console.log(data); //debugging para ver os dados que foram enviados
     //chamada fetch para envio dos dados para o servior via POST
     fetch('http://aqueous-waters-59160.herokuapp.com/login/', {
-        headers: { 'Content-Type': 'application/javascript' },
+        headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
         method: 'POST',
         body: JSON.stringify(data)
     }).then(function(response) {

@@ -25,8 +25,8 @@ window.onload = function() {
         console.log(data); //debugging para ver os dados que foram enviados
         //chamada fetch para envio dos dados para o servior via POST
         if (data.password == document.getElementById("confPassInput").value) {
-            fetch('http://aqueous-waters-59160.herokuapp.com/login/', {
-                headers: { 'Content-Type': 'application/javascript' },
+            fetch('http://aqueous-waters-59160.herokuapp.com/RegisterUser/', {
+                headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
                 method: 'POST',
                 body: JSON.stringify(data)
             }).then(function(response) {
@@ -37,6 +37,7 @@ window.onload = function() {
                     console.log(response.url); //=> String
                     throw Error(response.statusText);
                 } else {
+
                 alert("Conta Criada!");
                     createacc();
                     async function createacc() {
@@ -44,6 +45,7 @@ window.onload = function() {
                         window.location.href = "../static/ContaCriada.html";
                         return response.json();
                     }
+
                 }
             }).then(function(result) {
                 console.log(result);
