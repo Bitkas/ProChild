@@ -22,21 +22,22 @@
         <div class="circuloConfetti">
             <img class="confetti" src="./imagens/CriarConta.confetti.png" />
         </div>
-        <form>
-            <input id="nomeInput" type="text" class="inputCriarConta form-control" placeholder="Nome Completo" required></input>
-            <select id="GrauInput" class="form-select" aria-label="Default select example">
+        <form enctype="multipart/form-data" target="_blank" action="/RegisterUser/" method="post">
+            <input id="nomeInput" type="text" class="inputCriarConta form-control" placeholder="Nome Completo" name="name" required></input>
+            <select id="GrauInput" class="form-select" aria-label="Default select example" name="kinship">
                     <option selected disabled>Grau de Parentesco</option>
-                    <option value="1">Pai</option>
-                    <option value="2">Mãe</option>
-                    <option value="3">Professor</option>
-                    <option value="4">Tutor</option>
+                    <option value="Pai">Pai</option>
+                    <option value="Mae">Mãe</option>
+                    <option value="Professor">Professor</option>
+                    <option value="Tutor">Tutor</option>
                   </select>
-            <input id="emailInput" type="email" class="inputCriarConta form-control" placeholder="Email" required></input>
-            <input id="passInput" type="password" class="inputCriarConta form-control" name="password-Login" placeholder="Palavra-passe" required>
+            <input id="emailInput" type="email" class="inputCriarConta form-control" placeholder="Email" required name="email"></input>
+            <input id="passInput" type="password" class="inputCriarConta form-control" name="password" placeholder="Palavra-passe" required>
             <i id="viewText" class="far fa-eye" onclick="showPswd()"></i>
             </input>
             <input id="confPassInput" type="password" class="inputLogin form-control" name="password-Login" placeholder="Confirmar Palavra-passe" required></input>
-            <button id="criarContaBtn" class="criarContaBtn">Criar Conta</button>
+            <input name="cellphone" type="number" class="inputCriarConta form-control">
+            <button type="submit" id="criarContaBtn" class="criarContaBtn">Criar Conta</button>
         </form>
     </div>
 

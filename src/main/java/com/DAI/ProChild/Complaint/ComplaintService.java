@@ -2,6 +2,7 @@ package com.DAI.ProChild.Complaint;
 import com.DAI.ProChild.Message.Message;
 import com.DAI.ProChild.RegisterComplaint.RegisterComplaintRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;

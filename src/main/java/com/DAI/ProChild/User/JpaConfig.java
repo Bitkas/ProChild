@@ -7,7 +7,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 @Configuration
-@EnableJpaRepositories("com.DAI.ProChild.User")
 public class JpaConfig {
 
     @PersistenceContext

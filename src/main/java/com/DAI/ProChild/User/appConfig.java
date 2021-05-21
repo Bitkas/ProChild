@@ -21,9 +21,9 @@ import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
 @Configuration
-@EnableWebSecurity
+//@EnableWebSecurity
 //@EnableWebMvc
-@ComponentScan(basePackageClasses = CustomAuthenticationProvider.class)
+//@ComponentScan(basePackageClasses = CustomAuthenticationProvider.class)
 public class appConfig extends WebSecurityConfigurerAdapter {
 
     /*@Autowired
@@ -31,8 +31,9 @@ public class appConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
-        httpSecurity.authorizeRequests()
-                .antMatchers("/", "/complaint", "/RegisterUser/")
+        httpSecurity.csrf().disable()
+                .authorizeRequests()
+                .antMatchers("/", "/complaint", "/RegisterUser/", "CriarConta.html", "/CriarConta")
                 //.hasAnyRole()
                 .permitAll()
                 .anyRequest()
