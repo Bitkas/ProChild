@@ -1,8 +1,12 @@
 package com.DAI.ProChild.User;
+import jdk.jfr.ContentType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import com.google.gson.Gson;
@@ -36,18 +40,24 @@ public class UserController {
             return ResponseEntity.ok()
                     .body(gson.toJson("User não Encontrado"));
         }}
-    @RequestMapping(path = "/RegisterUser/", method = RequestMethod.POST, consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public ResponseEntity<String> registerUser(@RequestBody(required = false) String email, @RequestBody(required = false) String name, @RequestBody(required = false) String cellphone, @RequestBody(required = false) String kinship, @RequestBody(required = false) String password) {
-        Optional<User> user1 = this.userService.getUser(email);
-        if (user1.isPresent()) {
-            return ResponseEntity.status(HttpStatus.CONFLICT)
-                    .body(gson.toJson("Utilizador já existe!"));
-        } else {
-            this.userService.registerUser(new User(name, email, kinship, password, Integer.parseInt(cellphone)));
-            return ResponseEntity.ok()
-                    .body(gson.toJson("user"));
-        }
+    @RequestMapping(path = "/RegisterUser/", method = RequestMethod.POST)
+    public ResponseEntity<String> registerUser(String email, String name, int cellphone, String kinship, String password) {
+            Optional<User> user = this.userService.getUser(email);
+            if(user.isPresent()) {
+                return ResponseEntity.badRequest()
+                        .body(gson.toJson("User already exists!"));
+            } else {
+                User user1 = new User(name, email, kinship, password,cellphone);
+                this.userService.registerUser(user1);
+                return ResponseEntity.ok()
+                        .body(gson.toJson("user"));
+            }
     }
 
+    @GetMapping(path = "/LoggedInUser/")
+    public String getUserLogado() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        return authentication.getPrincipal().toString();
+    }
 
 }
