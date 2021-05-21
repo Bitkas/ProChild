@@ -25,7 +25,7 @@ window.onload = function() {
         console.log(data); //debugging para ver os dados que foram enviados
         //chamada fetch para envio dos dados para o servior via POST
         if (data.password == document.getElementById("confPassInput").value) {
-            fetch('http://aqueous-waters-59160.herokuapp.com/RegisterUser/', {
+            fetch('/RegisterUser/', { //Se apenas a rota nao funcionar voltar a por url completo
                 headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
                 method: 'POST',
                 body: JSON.stringify(data)
@@ -57,7 +57,7 @@ window.onload = function() {
         }
     }
 
-    document.getElementById("criarContaBtn").addEventListener("click", function() {
+    /*document.getElementById("criarContaBtn").addEventListener("click", function() {
         createacc();
-    });
+    });*/
 };
