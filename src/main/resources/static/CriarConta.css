@@ -9,12 +9,11 @@ body {
 
 * {
     overflow-x: hidden;
-    margin: 0px !important;
 }
 
 .screen {
-    width: 414px;
-    height: 736px;
+    width: 100%;
+    height: 100%;
     position: absolute;
     overflow: hidden;
     z-index: -1;
@@ -31,110 +30,103 @@ body {
 }
 
 .criarContaText {
-    width: 141px;
+    width: 100%;
     color: rgba(132, 132, 132, 1);
-    position: absolute;
-    top: 155px;
-    left: 137px;
+    position: relative;
     font-weight: bold;
     font-size: 25px;
     opacity: 1;
     text-align: center;
+    margin: 0 auto;
+    display: block;
+    margin-top: 4%;
 }
 
 .circuloConfetti {
-    width: 108px;
-    height: 108px;
+    width: 96px;
+    height: 96px;
     background: rgba(67, 164, 235, 0.10000000149011612);
+    background-image: url("./imagens/CriarConta.confetti.png");
+    background-repeat: no-repeat;
+    background-size: cover;
     opacity: 1;
     position: relative;
-    top: 36px;
-    left: 153px;
+    top: 7%;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 50px;
     border-radius: 50%;
 }
 
-.confetti {
-    position: absolute;
-    width: 75px;
-    height: 75px;
-    top: 13px;
-    left: 21px;
-}
-
 #nomeInput {
-    width: 319px;
-    height: 55px;
+    width: 80%;
+    height: 100%;
     background: rgba(148, 206, 240, 0.18000000715255737);
     opacity: 1;
-    position: absolute;
-    top: 227px;
-    left: 48px;
+    margin: 0 auto;
+    margin-top: 3%;
+    position: relative;
     border: 1px solid rgba(92, 174, 249, 1);
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
+    border-radius: 30px;
     overflow: hidden;
-    padding: 25px;
+    padding: 15px;
+    padding-left: 25px;
 }
 
 #emailInput {
-    width: 319px;
-    height: 55px;
+    width: 80%;
+    height: 100%;
     background: rgba(148, 206, 240, 0.18000000715255737);
     opacity: 1;
-    position: absolute;
-    top: 371px;
-    left: 48px;
+    margin: 0 auto;
+    margin-top: 2%;
+    position: relative;
     border: 1px solid rgba(92, 174, 249, 1);
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
+    border-radius: 30px;
     overflow: hidden;
-    padding: 25px;
+    padding: 15px;
+    padding-left: 25px;
 }
 
 #passInput {
-    width: 319px;
-    height: 55px;
+    width: 80%;
+    height: 100%;
     background: rgba(148, 206, 240, 0.18000000715255737);
     opacity: 1;
-    position: absolute;
-    top: 443px;
-    left: 48px;
+    margin: 0 auto;
+    margin-top: 2%;
+    margin-left: 10%;
+    position: relative;
     border: 1px solid rgba(92, 174, 249, 1);
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
+    border-radius: 30px;
     overflow: hidden;
-    padding: 25px;
+    padding: 15px;
+    padding-left: 25px;
+    display: inline-block;
 }
 
 #viewText {
-    position: absolute;
-    top: 462px;
-    left: 315px;
+    position: relative;
+    display: inline-block;
     color: #85C1FA;
     font-size: 20px;
+    margin-left: -50px;
 }
 
 #confPassInput {
-    width: 319px;
-    height: 55px;
+    width: 80%;
+    height: 100%;
     background: rgba(148, 206, 240, 0.18000000715255737);
     opacity: 1;
-    position: absolute;
-    top: 515px;
-    left: 48px;
+    margin: 0 auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    position: relative;
     border: 1px solid rgba(92, 174, 249, 1);
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
+    border-radius: 30px;
     overflow: hidden;
-    padding: 25px;
+    padding: 15px;
+    padding-left: 25px;
 }
 
 .criarContaBtn {
@@ -147,9 +139,10 @@ body {
     font-size: 25px;
     font-weight: bold;
     border: none;
-    top: 85%;
+    margin-top: 0%;
     left: 20%;
     box-shadow: 4px 4px 2px rgb(50 50 50 / 50%);
+    overflow: hidden;
 }
 
 ::placeholder {
@@ -161,18 +154,16 @@ body {
 }
 
 #GrauInput {
-    width: 319px;
-    height: 55px;
+    width: 80%;
+    height: 100%;
     background: rgba(148, 206, 240, 0.18000000715255737);
     opacity: 1;
-    position: absolute;
-    top: 299px;
-    left: 48px;
+    margin: 0 auto;
+    margin-top: 2%;
+    position: relative;
     border: 1px solid rgba(92, 174, 249, 1);
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
+    border-radius: 30px;
     overflow: hidden;
+    padding: 15px;
     padding-left: 25px;
 }
