@@ -1,6 +1,17 @@
+const { json } = require("express");
+
 const chatForm = document.getElementById('chat-form');
 const chatMessages = document.querySelector('.chat-messages');
+const email; 
 
+fetch("/LoggedInUser")
+.then(function(response){
+    JSON.stringify(response);
+})
+.then(function(resulte){
+    email = resulte;
+    console.log(email);
+})
 
 // Get username and room from URL
 const { username, room } = Qs.parse(location.search, {
@@ -82,3 +93,5 @@ document.getElementById('leave-btn').addEventListener('click', () => {
   } else {
   }
 });
+
+
