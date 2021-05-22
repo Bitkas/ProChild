@@ -23,7 +23,7 @@ function myLogin() {
     data.password = document.getElementById("passInputEntrar").value;
     console.log(data); //debugging para ver os dados que foram enviados
     //chamada fetch para envio dos dados para o servior via POST
-    fetch('http://aqueous-waters-59160.herokuapp.com/login/', {
+    fetch('/login/', {
         headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
         method: 'POST',
         body: JSON.stringify(data)

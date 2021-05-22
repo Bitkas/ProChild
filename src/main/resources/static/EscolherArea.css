@@ -25,7 +25,7 @@ body {
 
 .areaText {
     width: 290px;
-    color: rgba(251,251,251,1);
+    color: rgba(251, 251, 251, 1);
     position: absolute;
     top: 23px;
     left: 65px;
@@ -38,11 +38,12 @@ body {
 .btnAreaPais {
     width: 270px;
     height: 218px;
-    background: rgba(255,255,255,1);
+    background: rgba(255, 255, 255, 1);
     opacity: 1;
     position: absolute;
     top: 130px;
     left: 72px;
+    border: none;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -51,9 +52,13 @@ body {
     overflow: hidden;
 }
 
+.btnAreaPais:active {
+    background-color: #dadada;
+}
+
 .areaPaistext {
     width: 166px;
-    color: rgba(132,199,246,1);
+    color: rgba(132, 199, 246, 1);
     position: absolute;
     top: 10px;
     left: 49px;
@@ -62,7 +67,7 @@ body {
     opacity: 1;
 }
 
-.areaPaisImg{
+.areaPaisImg {
     width: 170px;
     height: 170px;
     background-repeat: no-repeat;
@@ -78,11 +83,12 @@ body {
 .btnAreaCrianças {
     width: 270px;
     height: 218px;
-    background: rgba(255,255,255,1);
+    background: rgba(255, 255, 255, 1);
     opacity: 1;
     position: absolute;
     top: 402px;
     left: 72px;
+    border: none;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -91,9 +97,13 @@ body {
     overflow: hidden;
 }
 
+.btnAreaCrianças:active {
+    background-color: #dadada;
+}
+
 .areaCriançastext {
     width: 221px;
-    color: rgba(132,199,246,1);
+    color: rgba(132, 199, 246, 1);
     position: absolute;
     top: 10px;
     left: 23px;
@@ -103,7 +113,7 @@ body {
     text-align: center;
 }
 
-.areaCriançasImg{
+.areaCriançasImg {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;

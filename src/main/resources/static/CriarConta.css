@@ -39,7 +39,7 @@ body {
     text-align: center;
     margin: 0 auto;
     display: block;
-    margin-top: 4%;
+    margin-top: -1%;
 }
 
 .circuloConfetti {
@@ -51,7 +51,7 @@ body {
     background-size: cover;
     opacity: 1;
     position: relative;
-    top: 7%;
+    top: 5%;
     text-align: center;
     margin: 0 auto;
     margin-bottom: 50px;
@@ -64,7 +64,7 @@ body {
     background: rgba(148, 206, 240, 0.18000000715255737);
     opacity: 1;
     margin: 0 auto;
-    margin-top: 3%;
+    margin-top: 1%;
     position: relative;
     border: 1px solid rgba(92, 174, 249, 1);
     border-radius: 30px;
@@ -160,6 +160,22 @@ body {
     opacity: 1;
     margin: 0 auto;
     margin-top: 2%;
+    position: relative;
+    border: 1px solid rgba(92, 174, 249, 1);
+    border-radius: 30px;
+    overflow: hidden;
+    padding: 15px;
+    padding-left: 25px;
+}
+
+#numberInput {
+    width: 80%;
+    height: 100%;
+    background: rgba(148, 206, 240, 0.18000000715255737);
+    opacity: 1;
+    margin: 0 auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
     position: relative;
     border: 1px solid rgba(92, 174, 249, 1);
     border-radius: 30px;

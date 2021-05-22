@@ -8,7 +8,7 @@ window.onload = function() {
         data.denuncia = document.getElementById("formDenunciaInput").value;
         console.log(data); //debugging para ver os dados que foram enviados
         //chamada fetch para envio dos dados para o servior via POST
-        fetch('http://aqueous-waters-59160.herokuapp.com/Form', {
+        fetch('/Form', {
             headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
             method: 'POST',
             body: JSON.stringify(data)

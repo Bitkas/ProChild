@@ -1,5 +1,5 @@
 function PerfilUpdate() {
-    fetch('http://aqueous-waters-59160.herokuapp.com/User/{email}/')
+    fetch('/User/{email}/')
         .then(res => res.json())
         .then((out) => {
             $.each(out, function(index, value) {
