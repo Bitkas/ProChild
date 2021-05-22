@@ -1,15 +1,16 @@
-const { json } = require("express");
+//const { json } = import "express";
 
+import { io } from "socket.io-client";
 const chatForm = document.getElementById('chat-form');
 const chatMessages = document.querySelector('.chat-messages');
-const email; 
+let email;
 
 fetch("/LoggedInUser")
 .then(function(response){
     JSON.stringify(response);
 })
-.then(function(resulte){
-    email = resulte;
+.then(function(result){
+    email = result;
     console.log(email);
 })
 
@@ -18,7 +19,8 @@ const { username, room } = Qs.parse(location.search, {
   ignoreQueryPrefix: true,
 });
 
-const socket = io();
+const socket = io(`/chat/${email}`);
+console.log(socket.username);
 
 // Join chatroom
 socket.emit('joinRoom', { username, room });
