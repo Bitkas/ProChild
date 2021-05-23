@@ -30,10 +30,6 @@ public class RegisterComplaintService {
     public Complaint registerComplaintForAudio(User user) {
 
         Complaint complaint = new Complaint(user);
-        Kid kid = new Kid();
-        kid.setName("Maria");
-        this.kidRepository.save(kid);
-        complaint.setKid(kid);
         this.registerComplaintRepository.save(complaint);
         return complaint;
     }

@@ -54,9 +54,9 @@ public class RegisterComplaintController {
             Complaint complaint = this.registerComplaintService.registerComplaintForAudio(user.get());
             complaint_form.setComplaint(complaint);
 
-        Complaint_Form complaintForm = this.registerComplaintService.registerForm(complaint_form);
+        this.registerComplaintService.registerForm(complaint_form);
         return ResponseEntity.ok()
-                .body(gson.toJson(complaintForm));
+                .body(gson.toJson("ola"));
 
         }
     }
