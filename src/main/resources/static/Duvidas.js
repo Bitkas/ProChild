@@ -10,7 +10,7 @@ fetch("/LoggedInUser")
     JSON.stringify(response);
 })
 .then(function(result){
-    email = result;
+    email = result.text();
     console.log(email);
 })
 

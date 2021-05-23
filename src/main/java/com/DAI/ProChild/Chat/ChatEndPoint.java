@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArraySet;
-@ServerEndpoint(value = "/chat/{email}")
+@ServerEndpoint("/chat/{email}/")
 public class ChatEndPoint {
     private Session session;
     private static final Set<ChatEndPoint> chatEndpoints = new CopyOnWriteArraySet<>();

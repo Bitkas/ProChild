@@ -8,17 +8,28 @@ fetch("/LoggedInUser/", {
         'Accept' : 'application/json'
     }
 }
-                ).then((result) => {
-email = result.body;
+                ).then((response) => {
+                return response.json();
+                })
+                .then((result) => {
+                console.log(result);
+email = result;
 console.log("From fetch: " + email);
+
+let host = document.location.host;
+let pathname = document.location.pathname;
+try {
+ws = new WebSocket("ws://localhost:8080/chat/" + email + "/");
+} catch(err) {
+    console.log(err.name);
+    console.log(err.message);
+}
+
 }).catch((error) => {
 console.log(error);
 });
 
-let host = document.location.host;
-let pathname = document.location.pathname;
 
-ws = new WebSocket("ws://" + host + "/" + "chat/" + email + "/");
 
 ws.onmessage = function(event) {
 console.log(event.data);

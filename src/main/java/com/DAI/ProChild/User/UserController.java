@@ -54,9 +54,10 @@ public class UserController {
     }
 
     @GetMapping(path = "/LoggedInUser/")
-    public String getUserLogado() {
+    public ResponseEntity<String> getUserLogado() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        return authentication.getPrincipal().toString();
+        return ResponseEntity.ok()
+                .body(gson.toJson(authentication.getPrincipal().toString()));
     }
 
 }
