@@ -21,6 +21,7 @@ public class WebMvcConfiguration implements WebMvcConfigurer {
         registry.addViewController("/CriarConta").setViewName("CriarConta");
         registry.addViewController("/ContaCriada").setViewName("ContaCriada");
         registry.addViewController("/Duvidas").setViewName("Duvidas");
+        registry.addViewController("/EscolherArea").setViewName("EscolherArea");
         registry.setOrder(Ordered.HIGHEST_PRECEDENCE);
     }
 

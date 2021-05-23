@@ -40,7 +40,7 @@ public class appConfig extends WebSecurityConfigurerAdapter {
                 .authenticated().and()
                 .formLogin()
                     //.loginPage("/login")
-                    .defaultSuccessUrl("/Duvidas")
+                    .defaultSuccessUrl("/EscolherArea")
                     .failureUrl("/login?error=true")
                 .permitAll();
     }

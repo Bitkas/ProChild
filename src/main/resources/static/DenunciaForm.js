@@ -21,7 +21,7 @@ window.onload = function() {
                 throw Error(response.statusText);
             } else {
                 alert("Denúncia submetida com sucesso!");
-                window.location.href = "../static/DenunciaSucesso.html";
+                window.location.href = "./DenunciaSucesso.html";
                 return response.json();
             }
         }).then(function(result) {
