@@ -26,25 +26,23 @@ public class Kid {
     private Date birthDate;
     @ManyToMany(mappedBy = "kids")
     private Set<User> users;
-    @OneToMany
-    @JoinColumn(name = "idComplaint")
+    @OneToMany(mappedBy = "kid")
     private Set<Complaint> complaints;
     @OneToMany
-    @JoinColumn(name = "idMessage")
     private Set<Message> messages;
 
     public Kid() {
         this.name = "";
         this.birthDate = new Date();
         this.users = new HashSet<>();
-        this.complaints = new HashSet<>();
+        //this.complaints = new HashSet<>();
         this.messages = new HashSet<>();
     }
 
     public Kid(String name, Date birthDate) {
         this.name = name;
         this.birthDate = birthDate;
-        this.complaints = new HashSet<>();
+        //this.complaints = new HashSet<>();
         this.users = new HashSet<>();
         this.messages = new HashSet<>();
     }

@@ -4,7 +4,7 @@ import com.DAI.ProChild.Complaint.Complaint;
 import com.DAI.ProChild.Complaint.RegisterComplaintController;
 import com.DAI.ProChild.Complaint_form.Complaint_Form;
 import com.DAI.ProChild.Complaint.RegisterComplaintController;
-import com.DAI.ProChild.RegisterComplaint.RegisterComplaintService;
+import com.DAI.ProChild.Complaint.RegisterComplaintService;
 import com.DAI.ProChild.User.User;
 import com.DAI.ProChild.User.UserService;
 import com.google.gson.Gson;

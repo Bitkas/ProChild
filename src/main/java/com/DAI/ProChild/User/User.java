@@ -1,26 +1,28 @@
 package com.DAI.ProChild.User;
+
 import com.DAI.ProChild.Complaint.Complaint;
 import com.DAI.ProChild.Kid.Kid;
 import com.DAI.ProChild.Message.Message;
-import javax.validation.constraints.NotEmpty;
 
 import javax.persistence.*;
+//import javax.validation.constraints.NotEmpty;
 import java.util.HashSet;
 import java.util.Set;
+
 @Entity
 @Table(name = "User")
 public class User {
     @Column
-    @NotEmpty
+  //  @NotEmpty
     private String name;
     @Id
-    @NotEmpty
+    //@NotEmpty
     private String email;
     @Column
-    @NotEmpty
+    //@NotEmpty
     private String kinship;
     @Column
-    @NotEmpty
+    //@NotEmpty
     private String password;
     @Column
     private int cellphone;

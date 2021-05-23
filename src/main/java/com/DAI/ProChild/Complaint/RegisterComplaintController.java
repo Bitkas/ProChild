@@ -2,7 +2,7 @@ package com.DAI.ProChild.Complaint;
 import com.DAI.ProChild.Complaint.Complaint;
 import com.DAI.ProChild.Complaint_Audio.Complaint_Audio;
 import com.DAI.ProChild.Complaint_form.Complaint_Form;
-import com.DAI.ProChild.RegisterComplaint.RegisterComplaintService;
+import com.DAI.ProChild.Complaint.RegisterComplaintService;
 import com.DAI.ProChild.User.User;
 import com.DAI.ProChild.User.UserService;
 import com.google.gson.Gson;
@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.WebApplicationContext;
 
+import java.sql.SQLException;
 import java.util.Date;
 import java.util.Optional;
 @RestController
@@ -47,9 +48,12 @@ public class RegisterComplaintController {
     @RequestMapping(path = "/Form", method = RequestMethod.POST)
     public ResponseEntity<String> registerFormComplaint(@RequestBody Complaint_Form complaint_form) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        Optional<User> user = this.userService.getUser((String) authentication.getPrincipal());
-        Complaint complaint = this.registerComplaintService.registerComplaintForAudio(user.get());
-        complaint_form.setComplaint(complaint);
+        Optional<User> user = this.userService.getUser(authentication.getPrincipal().toString());
+        System.out.println(user.get().getEmail());
+
+            Complaint complaint = this.registerComplaintService.registerComplaintForAudio(user.get());
+            complaint_form.setComplaint(complaint);
+
         Complaint_Form complaintForm = this.registerComplaintService.registerForm(complaint_form);
         return ResponseEntity.ok()
                 .body(gson.toJson(complaintForm));
