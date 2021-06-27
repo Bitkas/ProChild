@@ -18,7 +18,7 @@ import java.util.HashMap;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArraySet;
 
-@ServerEndpoint(value = "/chat{email}", decoders = ChatMesssageDecoder.class, encoders = ChatMesssageEncoder.class)
+@ServerEndpoint(value = "/chat/{email}", decoders = ChatMesssageDecoder.class, encoders = ChatMesssageEncoder.class)
 @Controller
 public class ChatEndPoint {
     private Session session;
