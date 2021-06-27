@@ -1,5 +1,6 @@
 package com.DAI.ProChild;
 
+import com.DAI.ProChild.Chat.ChatEndPoint;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -20,8 +21,11 @@ public class ProChildApplication {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
 				registry.addMapping("/login/").allowedOrigins("http://localhost:8080");
+				registry.addMapping("/").allowedOrigins("*");
 			}
 		};
 	}
+
+
 
 }

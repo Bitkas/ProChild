@@ -1,8 +1,8 @@
 package com.DAI.ProChild.Chat;
 
-//import com.DAI.ProChild.ChatMessage;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
 
 import javax.websocket.server.ServerEndpoint;
@@ -17,28 +17,31 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArraySet;
-@ServerEndpoint("/chat/{email}/")
+
+@ServerEndpoint(value = "/chat{email}", decoders = ChatMesssageDecoder.class, encoders = ChatMesssageEncoder.class)
+@Controller
 public class ChatEndPoint {
     private Session session;
     private static final Set<ChatEndPoint> chatEndpoints = new CopyOnWriteArraySet<>();
     private static HashMap<String, String> users = new HashMap<>();
     @Autowired
     private ChatMessageService chatMessageService;
+
+    @Autowired
+    public ChatEndPoint() {
+        System.out.println("Inside web socket Constructor!");
+    }
     @OnOpen
     public void onOpen(Session session, @PathParam("email") String email) throws IOException, EncodeException {
         this.session = session;
         chatEndpoints.add(this);
         users.put(session.getId(), email);
-
-        ChatMessage chatMessage = new ChatMessage();
-        chatMessage.setFrom(users.get(session.getId()));
-        chatMessage.setContent("Connected!");
-        broadcast(chatMessage);
     }
 
     @OnMessage
     public void onMessage(Session session, ChatMessage chatMessage) throws IOException, EncodeException {
         chatMessage.setFrom(users.get(session.getId()));
+        System.out.println(chatMessage.getContent());
         this.chatMessageService.saveChatMessage(chatMessage);
         broadcast(chatMessage);
     }
@@ -46,10 +49,6 @@ public class ChatEndPoint {
     @OnClose
     public void onClose(Session session) throws IOException, EncodeException {
         chatEndpoints.remove(this);
-        ChatMessage chatMessage = new ChatMessage();
-        chatMessage.setFrom(users.get(session.getId()));
-        chatMessage.setContent("Disconnected!");
-        broadcast(chatMessage);
     }
 
     @OnError

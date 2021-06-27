@@ -15,19 +15,24 @@ repositories {
 	mavenCentral()
 }
 
+
+
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'io.micrometer:micrometer-registry-prometheus'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation group: 'javax.servlet', name: 'jstl', version: '1.2'
+	implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-websocket', version: '9.0.43'
 	compile 'org.springframework.boot:spring-boot-starter-security'
 	compile "org.springframework.security:spring-security-web"
 	compile "org.springframework.security:spring-security-config"
+	compile group: 'org.springframework', name: 'spring-websocket', version: '5.3.7'
 	implementation 'org.springframework.security:spring-security-test'
 	runtimeOnly 'mysql:mysql-connector-java'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	compile group: 'com.google.code.gson', name: 'gson', version: '2.8.6'
-	compile 'javax.websocket:javax.websocket-api:1.1'
 }
 
 test {

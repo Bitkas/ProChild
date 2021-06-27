@@ -1,5 +1,4 @@
-let ws;
-let email;
+let email
 function connect() {
 
 fetch("/LoggedInUser/", {
@@ -7,33 +6,23 @@ fetch("/LoggedInUser/", {
         'Content-Type' : 'application/json',
         'Accept' : 'application/json'
     }
-}
-                ).then((response) => {
-                return response.json();
-                })
-                .then((result) => {
-                console.log(result);
-email = result;
-console.log("From fetch: " + email);
+}).then((response) => {
+    return response.json();
+    }).then((result) => {
+        email = result;
 
-let host = document.location.host;
-let pathname = document.location.pathname;
-try {
-ws = new WebSocket("ws://localhost:8080/chat/" + email + "/");
-} catch(err) {
-    console.log(err.name);
-    console.log(err.message);
-}
+        //const host = document.location.host;
+        const host = "aqueous-waters-59160.herokuapp.com/"
+        let ws = new WebSocket("ws://" + host +  "/chat");
 
-}).catch((error) => {
-console.log(error);
-});
+        ws.onopen = () => {
+            console.log("ola");
+        }
 
 
-
-ws.onmessage = function(event) {
-console.log(event.data);
-};
+    }).catch((error) => {
+        console.log(error);
+ });
 }
 
 function send() {
@@ -42,7 +31,6 @@ let json = JSON.stringify({
 "content": content,
 "from" : email
 });
-console.log("From method send(): " + json);
 ws.send(json);
 
 }

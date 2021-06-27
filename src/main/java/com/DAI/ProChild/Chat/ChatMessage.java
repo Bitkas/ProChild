@@ -3,6 +3,7 @@ package com.DAI.ProChild.Chat;
 import org.springframework.test.context.jdbc.Sql;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
 @Entity
@@ -13,12 +14,13 @@ public class ChatMessage {
     @SequenceGenerator(name = "idChatMessage")
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int idChatMessage;
-
+    @NotNull
     @Column(name = "MessageFrom")
     private String from;
     @Column(name = "MessageTo")
     private String to;
     @Column
+    @NotNull
     private String content;
     @Column
     private LocalDateTime dateTime;

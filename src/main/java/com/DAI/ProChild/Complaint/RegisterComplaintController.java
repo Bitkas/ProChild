@@ -47,6 +47,7 @@ public class RegisterComplaintController {
     }
     @RequestMapping(path = "/Form", method = RequestMethod.POST)
     public ResponseEntity<String> registerFormComplaint(@RequestBody Complaint_Form complaint_form) {
+
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         Optional<User> user = this.userService.getUser(authentication.getPrincipal().toString());
         System.out.println(user.get().getEmail());
