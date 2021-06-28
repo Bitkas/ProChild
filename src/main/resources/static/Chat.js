@@ -21,7 +21,7 @@ fetch("/LoggedInUser/", {
 
 
         ws.onopen = () => {
-            console.log("ola");
+            alert("You are connected!")
         }
 
         ws.onmessage = (message) => displayMessage(message.data);
