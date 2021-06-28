@@ -13,7 +13,7 @@ fetch("/LoggedInUser/", {
 
         //const host = document.location.host;
         const host = "aqueous-waters-59160.herokuapp.com"
-        let ws = new WebSocket("ws://" + host +  "/chat/" + email + "/");
+        let ws = new WebSocket("wss://" + host +  "/chat/" + email + "/");
 
         ws.onopen = () => {
             console.log("ola");
