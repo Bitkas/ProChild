@@ -1,4 +1,5 @@
 let email
+let ws;
 function connect() {
 
 fetch("/LoggedInUser/", {
@@ -15,7 +16,7 @@ fetch("/LoggedInUser/", {
         //heroku host
         const host = "aqueous-waters-59160.herokuapp.com"
         //heroku web socket
-        let ws = new WebSocket("wss://" + host +  "/chat/" + email);
+        ws = new WebSocket("wss://" + host +  "/chat/" + email);
         //localhost web socket
         //let ws = new WebSocket("ws://" + host +  "/chat/" + email);
 
