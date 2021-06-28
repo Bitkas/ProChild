@@ -19,7 +19,7 @@ fetch("/LoggedInUser/", {
             console.log("ola");
         }
 
-
+        ws.onmessage = (message) => displayMessage(message.data);
     }).catch((error) => {
         console.log(error);
  });
@@ -32,5 +32,13 @@ let json = JSON.stringify({
 "from" : email
 });
 ws.send(json);
+displayMessage(content);
+}
 
+function displayMessage(message) {
+    let messageDiv = document.getElementById("messages");
+    const messageBox = "<div>" +
+                        "<p>" + message + "</p>" +
+                        "</div>"
+    messageDiv.innerHTML = messageBox;
 }
