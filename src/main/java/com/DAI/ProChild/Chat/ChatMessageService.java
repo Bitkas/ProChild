@@ -17,9 +17,8 @@ public class ChatMessageService {
         this.chatMessageRepository = chatMessageRepository;
     }
 
-    public boolean saveChatMessage(ChatMessage chatMessage) {
-        this.chatMessageRepository.save(chatMessage);
-        return true;
+    public ChatMessage saveChatMessage(ChatMessage chatMessage) {
+         return this.chatMessageRepository.save(chatMessage);
     }
 
     public List<ChatMessage> getAllChatMessages() {
