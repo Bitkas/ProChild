@@ -15,7 +15,7 @@ fetch("/LoggedInUser/", {
         //const host = document.location.host;
         //heroku host
         const host = "aqueous-waters-59160.herokuapp.com"
-        ws = new WebSocket("ws://" + host +  "/chat/" + email);
+        ws = new WebSocket("wss://" + host +  "/chat/" + email);
 
 
 
@@ -25,8 +25,13 @@ fetch("/LoggedInUser/", {
 
         ws.onmessage = (message) => {
             displayMessage(message.data, "otherOrigin")
-
+            return false;
         };
+
+        ws.onclose = (close) => {
+            console.log("close reason: ", close.reason);
+            console.log("close code: ", close.code)
+        }
     }).catch((error) => {
         console.log(error);
  });

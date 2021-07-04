@@ -15,6 +15,7 @@ import javax.websocket.OnMessage;
 import javax.websocket.OnOpen;
 import javax.websocket.Session;
 import java.io.IOException;
+import java.lang.instrument.Instrumentation;
 import java.util.HashMap;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArraySet;
@@ -23,6 +24,7 @@ import java.util.concurrent.CopyOnWriteArraySet;
 @Controller
 public class ChatEndPoint {
     private Session session;
+    private static volatile Instrumentation instrumentation;
     private static final Set<ChatEndPoint> chatEndpoints = new CopyOnWriteArraySet<>();
     private static HashMap<String, String> users = new HashMap<>();
     @Autowired
@@ -42,7 +44,6 @@ public class ChatEndPoint {
     @OnMessage
     public void onMessage(Session session, @NotNull ChatMessage chatMessage) throws IOException, EncodeException {
         chatMessage.setFrom(users.get(session.getId()));
-        System.out.println(chatMessage);
         broadcast(chatMessage);
         ChatMessage savedMessage = this.chatMessageService.saveChatMessage(chatMessage);
         System.out.println(savedMessage);
