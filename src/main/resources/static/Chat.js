@@ -15,17 +15,18 @@ fetch("/LoggedInUser/", {
         //const host = document.location.host;
         //heroku host
         const host = "aqueous-waters-59160.herokuapp.com"
-        //heroku web socket
-        ws = new WebSocket("wss://" + host +  "/chat/" + email);
-        //localhost web socket
-        //let ws = new WebSocket("ws://" + host +  "/chat/" + email);
+        ws = new WebSocket("ws://" + host +  "/chat/" + email);
+
 
 
         ws.onopen = () => {
             alert("You are connected!")
         }
 
-        ws.onmessage = (message) => displayMessage(message.data);
+        ws.onmessage = (message) => {
+            displayMessage(message.data, "otherOrigin")
+
+        };
     }).catch((error) => {
         console.log(error);
  });
@@ -38,13 +39,20 @@ let json = JSON.stringify({
 "from" : email
 });
 ws.send(json);
-displayMessage(content);
+displayMessage(json, "sameOrigin");
 }
 
-function displayMessage(message) {
+function displayMessage(message, wasSent) {
+    const realMessage = JSON.parse(message);
     let messageDiv = document.getElementById("messages");
-    const messageBox = "<div>" +
-                        "<p>" + message + "</p>" +
+    const messageBox = "<div class=" + wasSent +  ">" +
+                        "<p>" + realMessage.content + "</p>" +
                         "</div>"
-    messageDiv.innerHTML = messageBox;
+    messageDiv.innerHTML += messageBox;
+    calcDimensions(realMessage.content, document.getElementsByClassName(wasSent));
+}
+
+function calcDimensions(message, containerCollection) {
+    const heightContainer = (message.length * 15)/380;
+    containerCollection[containerCollection.length - 1].style.height = heightContainer;
 }

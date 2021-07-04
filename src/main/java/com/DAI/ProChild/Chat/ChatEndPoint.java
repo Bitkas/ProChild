@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 
+import javax.validation.constraints.NotNull;
 import javax.websocket.server.ServerEndpoint;
 import javax.websocket.server.PathParam;
 import javax.websocket.EncodeException;
@@ -39,15 +40,17 @@ public class ChatEndPoint {
     }
 
     @OnMessage
-    public void onMessage(Session session, ChatMessage chatMessage) throws IOException, EncodeException {
+    public void onMessage(Session session, @NotNull ChatMessage chatMessage) throws IOException, EncodeException {
         chatMessage.setFrom(users.get(session.getId()));
+        System.out.println(chatMessage);
+        broadcast(chatMessage);
         ChatMessage savedMessage = this.chatMessageService.saveChatMessage(chatMessage);
         System.out.println(savedMessage);
-        broadcast(chatMessage);
     }
 
     @OnClose
     public void onClose(Session session) throws IOException, EncodeException {
+        System.out.println("Closing!");
         chatEndpoints.remove(this);
     }
 
@@ -63,17 +66,17 @@ public class ChatEndPoint {
 
     }
 
-    private static void broadcast(ChatMessage chatMessage) throws IOException, EncodeException {
+    private static boolean broadcast(ChatMessage chatMessage) throws IOException, EncodeException {
         chatEndpoints.forEach(chatEndPoint -> {
             synchronized (chatEndPoint) {
                 try {
                     chatEndPoint.session.getBasicRemote()
                             .sendObject(chatMessage);
-                    System.out.println("message sent!");
                 } catch (IOException | EncodeException exception) {
                     exception.printStackTrace();
                 }
             }
         });
+        return true;
     }
 }

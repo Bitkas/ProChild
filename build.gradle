@@ -25,7 +25,8 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation group: 'javax.servlet', name: 'jstl', version: '1.2'
 	implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-websocket', version: '9.0.43'
-	compile 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.jetbrains:annotations:20.1.0'
+    compile 'org.springframework.boot:spring-boot-starter-security'
 	compile "org.springframework.security:spring-security-web"
 	compile "org.springframework.security:spring-security-config"
 	compile group: 'org.springframework', name: 'spring-websocket', version: '5.3.7'

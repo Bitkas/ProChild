@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-@Service
+@Service("chatMessageService")
 public class ChatMessageService {
 
     private ChatMessageRepository chatMessageRepository;
