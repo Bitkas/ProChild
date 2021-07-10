@@ -94,36 +94,39 @@ a {
     height: 450px;
 }
 
-.chat-main {
-	display: grid;
-	grid-template-columns: 1fr 3fr;
-}
-
-
 .chat-messages {
-	padding: 30px;
 	max-height: 500px;
 	overflow-y: scroll;
 }
 
-.chat-messages .messages {
-	padding: 10px;
-	margin-bottom: 15px;
+.chat-messages, .messages {
 	background-color: var(--light-color);
 	border-radius: 5px;
 }
 
-.chat-messages .messages .meta {
-    width = 380px;
+.chat-messages, .messages, .meta {
 	font-size: 15px;
 	font-weight: bold;
 	color: var(--dark-color-b);
 	opacity: 0.7;
-	margin-bottom: 7px;
 }
 
-#sameOrigin {
+.sameOrigin, .otherOrigin{
+    width: 70%;
+    background-color: white;
+}
 
+p {
+    margin-bottom: 0px;
+}
+
+.sameOrigin{
+    margin-left: 100px;
+}
+
+#from {
+    color: red;
+    font-size: 10px;
 }
 
 .chat-messages .messages .meta span {

@@ -12,10 +12,10 @@ fetch("/LoggedInUser/", {
     }).then((result) => {
         email = result;
 
-        //const host = document.location.host;
+        const host = document.location.host;
         //heroku host
-        const host = "aqueous-waters-59160.herokuapp.com"
-        ws = new WebSocket("wss://" + host +  "/chat/" + email);
+        //const host = "aqueous-waters-59160.herokuapp.com"
+        ws = new WebSocket("ws://" + host +  "/chat/" + email);
 
 
 
@@ -24,8 +24,7 @@ fetch("/LoggedInUser/", {
         }
 
         ws.onmessage = (message) => {
-            displayMessage(message.data, "otherOrigin")
-            return false;
+            displayMessage(JSON.parse(message.data));
         };
 
         ws.onclose = (close) => {
@@ -44,20 +43,30 @@ let json = JSON.stringify({
 "from" : email
 });
 ws.send(json);
-displayMessage(json, "sameOrigin");
 }
 
-function displayMessage(message, wasSent) {
-    const realMessage = JSON.parse(message);
+function displayMessage(message) {
+    const id = setId(message);
     let messageDiv = document.getElementById("messages");
-    const messageBox = "<div class=" + wasSent +  ">" +
-                        "<p>" + realMessage.content + "</p>" +
+    const messageBox = "<div class=" + id +  ">" +
+                        "<p class='message'>" + message.content + "</p>" +
+                        "<p id='from'>" + message.from + "</p>" +
                         "</div>"
     messageDiv.innerHTML += messageBox;
-    calcDimensions(realMessage.content, document.getElementsByClassName(wasSent));
+    calcDimensions(message.content, document.getElementsByClassName("message")[document.getElementsByClassName("message").length - 1]);
 }
 
-function calcDimensions(message, containerCollection) {
-    const heightContainer = (message.length * 15)/380;
-    containerCollection[containerCollection.length - 1].style.height = heightContainer;
+function calcDimensions(message, messageContainer) {
+    const heightContainer = (message.length * 15)/(380*0.8);
+    messageContainer.style.height = heightContainer;
+}
+
+function setId(message) {
+    let id;
+    if(message.from == email) {
+        id="sameOrigin";
+    } else {
+        id= "otherOrigin";
+    }
+    return id;
 }

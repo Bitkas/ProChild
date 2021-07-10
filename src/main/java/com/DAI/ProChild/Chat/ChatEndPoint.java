@@ -45,8 +45,8 @@ public class ChatEndPoint {
     public void onMessage(Session session, @NotNull ChatMessage chatMessage) throws IOException, EncodeException {
         chatMessage.setFrom(users.get(session.getId()));
         broadcast(chatMessage);
-        ChatMessage savedMessage = this.chatMessageService.saveChatMessage(chatMessage);
-        System.out.println(savedMessage);
+        //ChatMessage savedMessage = this.chatMessageService.saveChatMessage(chatMessage);
+        //System.out.println(savedMessage);
     }
 
     @OnClose
